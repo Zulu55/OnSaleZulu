@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X5k-f2-b5h">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="gAE-YM-kbH">
+            <objects>
+                <viewController id="X5k-f2-b5h" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y8P-hJ-Z43"/>
+                        <viewControllerLayoutGuide type="bottom" id="9ZL-r4-8FZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yd7-JS-zBw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="441" translatesAutoresizingMaskIntoConstraints="NO" image="onsale.png">
+                                <rect key="frame" x="44" y="176" width="326" height="544"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint id="442" firstItem="441" firstAttribute="top" secondItem="Y8P-hJ-Z43" secondAttribute="bottom" constant="156"/>
+                            <constraint id="443" firstItem="9ZL-r4-8FZ" firstAttribute="top" secondItem="441" secondAttribute="bottom" constant="176"/>
+                            <constraint id="444" firstItem="441" firstAttribute="leading" secondItem="yd7-JS-zBw" secondAttribute="leadingMargin" constant="24"/>
+                            <constraint id="445" firstAttribute="trailingMargin" secondItem="441" secondAttribute="trailing" constant="24"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAI-xm-WK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="349" y="339"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="onsale.png" width="600" height="359"/>
+    </resources>
+</document>
