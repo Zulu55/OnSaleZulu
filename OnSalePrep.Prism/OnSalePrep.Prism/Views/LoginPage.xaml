@@ -19,7 +19,7 @@
             <ScrollView>
                 <StackLayout>
                     <Image HeightRequest="150"
-                           Margin="0,20,0,0"
+                           Margin="20"
                            Source="onsale"/>
 
                     <StackLayout VerticalOptions="CenterAndExpand">
@@ -49,17 +49,17 @@
                         </Label.GestureRecognizers>
                     </Label>
 
-                    <StackLayout>
-                        <Button Command="{Binding LoginCommand}" 
-                                IsEnabled="{Binding IsEnabled}"
-                                Text="{i18n:Translate Login}"/>
-                        <Button Command="{Binding RegisterCommand}" 
-                                IsEnabled="{Binding IsEnabled}"
-                                Text="{i18n:Translate Register}"
-                                Style="{StaticResource DangerButton}"/>
-                    </StackLayout>
                 </StackLayout>
             </ScrollView>
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Button Command="{Binding LoginCommand}" 
+                        IsEnabled="{Binding IsEnabled}"
+                        Text="{i18n:Translate Login}"/>
+                <Button Command="{Binding RegisterCommand}" 
+                        IsEnabled="{Binding IsEnabled}"
+                        Text="{i18n:Translate Register}"
+                        Style="{StaticResource DangerButton}"/>
+            </StackLayout>
         </StackLayout>
         <busyindicator:SfBusyIndicator AnimationType="Gear" 
                                        AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
