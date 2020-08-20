@@ -95,7 +95,7 @@ namespace OnSalePrep.Prism.ViewModels
                 Username = Email
             };
 
-            Response response = await _apiService.GetTokenAsync(url, "Account", "/CreateToken", request);
+            Response response = await _apiService.GetTokenAsync(url, "api", "/Account/CreateToken", request);
             IsRunning = false;
             IsEnabled = true;
 

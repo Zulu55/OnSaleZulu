@@ -291,6 +291,9 @@
     <PackageReference Include="Syncfusion.Xamarin.Core">
       <Version>18.2.0.54</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\OnSalePrep.Common\OnSalePrep.Common.csproj">
