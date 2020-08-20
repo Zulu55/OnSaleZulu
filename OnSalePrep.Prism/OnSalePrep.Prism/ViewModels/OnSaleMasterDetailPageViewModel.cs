@@ -1,4 +1,7 @@
-﻿using OnSalePrep.Common.Models;
+﻿using Newtonsoft.Json;
+using OnSalePrep.Common.Helpers;
+using OnSalePrep.Common.Models;
+using OnSalePrep.Common.Responses;
 using OnSalePrep.Prism.Helpers;
 using OnSalePrep.Prism.ItemViewModels;
 using OnSalePrep.Prism.Views;
@@ -12,13 +15,31 @@ namespace OnSalePrep.Prism.ViewModels
     public class OnSaleMasterDetailPageViewModel : ViewModelBase
     {
         private readonly INavigationService _navigationService;
+        private UserResponse _user;
 
         public OnSaleMasterDetailPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             _navigationService = navigationService;
             LoadMenus();
+            LoadUser();
         }
+
+        public UserResponse User
+        {
+            get => _user;
+            set => SetProperty(ref _user, value);
+        }
+
         public ObservableCollection<MenuItemViewModel> Menus { get; set; }
+
+        private void LoadUser()
+        {
+            if (Settings.IsLogin)
+            {
+                TokenResponse token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
+                User = token.User;
+            }
+        }
 
         private void LoadMenus()
         {
@@ -54,7 +75,7 @@ namespace OnSalePrep.Prism.ViewModels
                 {
                     Icon = "ic_exit_to_app",
                     PageName = $"{nameof(LoginPage)}",
-                    Title = Languages.Login
+                    Title = Settings.IsLogin ? Languages.Logout : Languages.Login
                 }
             };
 

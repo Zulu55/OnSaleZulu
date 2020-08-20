@@ -192,4 +192,10 @@
   <data name="Register" xml:space="preserve">
     <value>Registrar Novo Usuário</value>
   </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>Email ou senha incorretos.</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Fazer logoff</value>
+  </data>
 </root>

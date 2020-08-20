@@ -66,5 +66,9 @@ namespace OnSalePrep.Prism.Helpers
         public static string ForgotPassword => Resource.ForgotPassword;
 
         public static string Register => Resource.Register;
+
+        public static string LoginError => Resource.LoginError;
+
+        public static string Logout => Resource.Logout;
     }
 }

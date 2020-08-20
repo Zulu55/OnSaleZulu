@@ -1,4 +1,5 @@
-﻿using OnSalePrep.Common.Models;
+﻿using OnSalePrep.Common.Helpers;
+using OnSalePrep.Common.Models;
 using OnSalePrep.Prism.Views;
 using Prism.Commands;
 using Prism.Navigation;
@@ -19,6 +20,12 @@ namespace OnSalePrep.Prism.ItemViewModels
 
         private async void SelectMenuAsync()
         {
+            if (PageName == "LoginPage" && Settings.IsLogin)
+            {
+                Settings.IsLogin = false;
+                Settings.Token = null;
+            }
+
             await _navigationService.NavigateAsync($"/{nameof(OnSaleMasterDetailPage)}/NavigationPage/{PageName}");
         }
     }
