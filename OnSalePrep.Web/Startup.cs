@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -10,6 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 using OnSalePrep.Web.Data;
 using OnSalePrep.Web.Data.Entities;
 using OnSalePrep.Web.Helpers;
+using System.Globalization;
 using System.Text;
 
 namespace OnSalePrep.Web
@@ -78,6 +80,14 @@ namespace OnSalePrep.Web
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+
+            // TODO: Explain in videos
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("en-US"),
+                SupportedCultures = new[] { new CultureInfo("en-US") },
+                SupportedUICultures = new[] { new CultureInfo("en-US") }
+            });
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
