@@ -81,7 +81,6 @@ namespace OnSalePrep.Web
                 app.UseHsts();
             }
 
-            // TODO: Explain in videos
             app.UseRequestLocalization(new RequestLocalizationOptions
             {
                 DefaultRequestCulture = new RequestCulture("en-US"),
