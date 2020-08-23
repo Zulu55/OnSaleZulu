@@ -37,19 +37,19 @@ namespace OnSalePrep.Web.Data
 
             modelBuilder.Entity<Country>(cou =>
             {
-                cou.HasIndex(c => c.Name).IsUnique();
+                cou.HasIndex("Name").IsUnique();
                 cou.HasMany(c => c.Departments).WithOne(d => d.Country).OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<Department>(dep =>
             {
-                dep.HasIndex(d => d.Name).IsUnique();
+                dep.HasIndex("Name", "CountryId").IsUnique();
                 dep.HasOne(d => d.Country).WithMany(c => c.Departments).OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<City>(cit =>
             {
-                cit.HasIndex(c => c.Name).IsUnique();
+                cit.HasIndex("Name", "DepartmentId").IsUnique();
                 cit.HasOne(c => c.Department).WithMany(d => d.Cities).OnDelete(DeleteBehavior.Cascade);
             });
             
