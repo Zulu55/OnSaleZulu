@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using OnSalePrep.Common.Enums;
 using OnSalePrep.Web.Data.Entities;
 using OnSalePrep.Web.Models;
+using System;
 using System.Threading.Tasks;
 
 namespace OnSalePrep.Web.Helpers
@@ -22,5 +24,7 @@ namespace OnSalePrep.Web.Helpers
         Task LogoutAsync();
 
         Task<SignInResult> ValidatePasswordAsync(User user, string password);
+        
+        Task<User> AddUserAsync(AddUserViewModel model, Guid imageId, UserType userType);
     }
 }
