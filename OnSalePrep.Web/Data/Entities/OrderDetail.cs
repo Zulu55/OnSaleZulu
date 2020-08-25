@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace OnSalePrep.Common.Entities
+namespace OnSalePrep.Web.Data.Entities
 {
     public class OrderDetail
     {

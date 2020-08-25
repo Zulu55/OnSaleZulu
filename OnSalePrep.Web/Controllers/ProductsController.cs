@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OnSalePrep.Common.Entities;
 using OnSalePrep.Web.Data;
+using OnSalePrep.Web.Data.Entities;
 using OnSalePrep.Web.Helpers;
 using OnSalePrep.Web.Models;
 using System;

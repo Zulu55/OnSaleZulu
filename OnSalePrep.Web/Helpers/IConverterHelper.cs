@@ -1,4 +1,5 @@
 ﻿using OnSalePrep.Common.Entities;
+using OnSalePrep.Web.Data.Entities;
 using OnSalePrep.Web.Models;
 using System;
 using System.Threading.Tasks;

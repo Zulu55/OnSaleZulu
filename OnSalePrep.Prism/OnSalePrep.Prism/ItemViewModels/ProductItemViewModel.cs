@@ -1,11 +1,12 @@
 ﻿using OnSalePrep.Common.Entities;
+using OnSalePrep.Common.Responses;
 using OnSalePrep.Prism.Views;
 using Prism.Commands;
 using Prism.Navigation;
 
 namespace OnSalePrep.Prism.ItemViewModels
 {
-    public class ProductItemViewModel : Product
+    public class ProductItemViewModel : ProductResponse
     {
         private readonly INavigationService _navigationService;
         private DelegateCommand _selectProductCommand;
