@@ -37,6 +37,7 @@ namespace OnSalePrep.Prism
             containerRegistry.RegisterForNavigation<ShowCarPage, ShowCarPageViewModel>();
             containerRegistry.RegisterForNavigation<ModifyUserPage, ModifyUserPageViewModel>();
             containerRegistry.RegisterForNavigation<ShowHistoryPage, ShowHistoryPageViewModel>();
+            containerRegistry.RegisterForNavigation<QualificationsPage, QualificationsPageViewModel>();
         }
     }
 }

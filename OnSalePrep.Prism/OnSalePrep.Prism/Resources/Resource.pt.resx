@@ -198,4 +198,19 @@
   <data name="Logout" xml:space="preserve">
     <value>Fazer logoff</value>
   </data>
+  <data name="Qualification" xml:space="preserve">
+    <value>Qualificação</value>
+  </data>
+  <data name="Qualifications" xml:space="preserve">
+    <value>Avaliações</value>
+  </data>
+  <data name="QualificationNumber" xml:space="preserve">
+    <value>Número de avaliações</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Encontro</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>Comentários</value>
+  </data>
 </root>

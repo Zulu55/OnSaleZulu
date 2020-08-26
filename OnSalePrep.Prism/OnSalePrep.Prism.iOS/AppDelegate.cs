@@ -2,6 +2,7 @@
 using Prism;
 using Prism.Ioc;
 using Syncfusion.SfBusyIndicator.XForms.iOS;
+using Syncfusion.SfRating.XForms.iOS;
 using Syncfusion.SfRotator.XForms.iOS;
 using Syncfusion.XForms.iOS.TextInputLayout;
 using UIKit;
@@ -19,6 +20,7 @@ namespace OnSalePrep.Prism.iOS
             new SfRotatorRenderer();
             SfTextInputLayoutRenderer.Init();
             LoadApplication(new App(new iOSInitializer()));
+            SfRatingRenderer.Init();
             return base.FinishedLaunching(app, options);
         }
     }
