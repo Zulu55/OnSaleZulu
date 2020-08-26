@@ -81,6 +81,11 @@ namespace OnSalePrep.Prism.ViewModels
 
         private void ShowProducts()
         {
+            if (_myProducts == null)
+            {
+                return;
+            }
+
             if (string.IsNullOrEmpty(Search))
             {
                 Products = new ObservableCollection<ProductItemViewModel>(_myProducts.Select(p => new ProductItemViewModel(_navigationService)
