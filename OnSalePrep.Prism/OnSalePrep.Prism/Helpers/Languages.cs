@@ -76,5 +76,7 @@ namespace OnSalePrep.Prism.Helpers
         public static string Qualifications => Resource.Qualifications;
 
         public static string QualificationNumber => Resource.QualificationNumber;
+
+        public static string Details => Resource.Details;
     }
 }

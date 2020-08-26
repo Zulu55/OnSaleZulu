@@ -213,4 +213,7 @@
   <data name="Remarks" xml:space="preserve">
     <value>Comentários</value>
   </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalhes</value>
+  </data>
 </root>

@@ -238,5 +238,11 @@ namespace OnSalePrep.Prism.Resources {
                 return ResourceManager.GetString("Remarks", resourceCulture);
             }
         }
+        
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
     }
 }
