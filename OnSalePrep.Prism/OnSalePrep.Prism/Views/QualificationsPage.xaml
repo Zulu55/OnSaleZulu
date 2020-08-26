@@ -10,6 +10,7 @@
              xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
              x:Class="OnSalePrep.Prism.Views.QualificationsPage"
              BackgroundColor="{StaticResource ColorBackground}"
+             IconImageSource="ic_action_star_half"
              Title="{Binding Title}">
 
     <ContentPage.ToolbarItems>

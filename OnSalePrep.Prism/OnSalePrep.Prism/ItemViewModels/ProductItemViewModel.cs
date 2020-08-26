@@ -24,7 +24,7 @@ namespace OnSalePrep.Prism.ItemViewModels
                 { "product", this }
             };
 
-            await _navigationService.NavigateAsync(nameof(QualificationsPage), parameters);
+            await _navigationService.NavigateAsync(nameof(ProductTabbedPage), parameters);
         }
     }
 }

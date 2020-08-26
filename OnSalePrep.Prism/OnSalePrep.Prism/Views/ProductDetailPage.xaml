@@ -11,6 +11,7 @@
              xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
              x:Class="OnSalePrep.Prism.Views.ProductDetailPage"
              BackgroundColor="{StaticResource ColorBackground}"
+             IconImageSource="ic_action_card_giftcard"
              Title="{Binding Title}">
 
     <StackLayout Padding="5">
