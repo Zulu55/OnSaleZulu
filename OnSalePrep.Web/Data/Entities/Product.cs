@@ -44,6 +44,6 @@ namespace OnSalePrep.Web.Data.Entities
         public int ProductQualifications => Qualifications == null ? 0 : Qualifications.Count;
 
         [DisplayFormat(DataFormatString = "{0:N2}")]
-        public float Qualification => Qualifications == null ? 0 : Qualifications.Average(q => q.Score);
+        public float Qualification => Qualifications == null || Qualifications.Count == 0 ? 0 : Qualifications.Average(q => q.Score);
     }
 }
