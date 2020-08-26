@@ -1,5 +1,4 @@
-﻿using OnSalePrep.Common.Entities;
-using OnSalePrep.Common.Responses;
+﻿using OnSalePrep.Common.Responses;
 using OnSalePrep.Prism.Views;
 using Prism.Commands;
 using Prism.Navigation;
