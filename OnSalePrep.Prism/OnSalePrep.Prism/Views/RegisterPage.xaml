@@ -7,9 +7,10 @@
              ios:Page.UseSafeArea="true"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
-             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"             x:Class="OnSalePrep.Prism.Views.RegisterPage"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
              xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
            	 xmlns:i18n="clr-namespace:OnSalePrep.Prism.Helpers"
+             x:Class="OnSalePrep.Prism.Views.RegisterPage"
              BackgroundColor="{StaticResource ColorBackground}"
              Title="{Binding Title}">
 
