@@ -1,4 +1,5 @@
-﻿using OnSalePrep.Common.Responses;
+﻿using OnSalePrep.Common.Helpers;
+using OnSalePrep.Common.Responses;
 using OnSalePrep.Prism.Views;
 using Prism.Commands;
 using Prism.Navigation;
@@ -24,6 +25,7 @@ namespace OnSalePrep.Prism.ItemViewModels
                 { "product", this }
             };
 
+            Settings.ProductId = Id;
             await _navigationService.NavigateAsync(nameof(ProductTabbedPage), parameters);
         }
     }

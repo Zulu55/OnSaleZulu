@@ -37,7 +37,7 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Label Grid.Column="0"
-                                   Text="{Binding DateLocal, StringFormat='{0:yyyy/MM/dd mm:hh}'}"/>
+                                   Text="{Binding DateLocal, StringFormat='{0:yyyy/MM/dd hh:mm}'}"/>
                             <rating:SfRating Grid.Column="1"
                                              ItemSize="20"
                                              IsEnabled="False"

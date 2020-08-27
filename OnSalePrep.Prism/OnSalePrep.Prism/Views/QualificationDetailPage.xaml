@@ -24,13 +24,14 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
                     <Label Grid.Column="0"
                            Grid.Row="0"
+                           FontAttributes="Bold"
                            Text="{i18n:Translate Qualification}"
                            VerticalOptions="Center"/>
                     <Label Grid.Column="1"
@@ -41,6 +42,7 @@
 
                     <Label Grid.Column="0"
                            Grid.Row="1"
+                           FontAttributes="Bold"
                            Text="{i18n:Translate Date}"
                            VerticalOptions="Center"/>
                     <Label Grid.Column="1"
@@ -51,12 +53,11 @@
 
                     <Label Grid.Column="0"
                            Grid.Row="2"
+                           FontAttributes="Bold"
                            Text="{i18n:Translate Remarks}"
                            VerticalOptions="Center"/>
                     <Label Grid.Column="1"
                            Grid.Row="2"
-                           FontAttributes="Bold"
-                           FontSize="Large"
                            Text="{Binding Qualification.Remarks}"/>
 
                 </Grid>
