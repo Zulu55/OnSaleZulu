@@ -7,8 +7,10 @@ namespace OnSalePrep.Common.Helpers
     {
         private const string _token = "token";
         private const string _isLogin = "isLogin";
+        private const string _productId = "productId";
         private static readonly string _stringDefault = string.Empty;
         private static readonly bool _boolDefault = false;
+        private static readonly int _intDefault = 0;
 
         private static ISettings AppSettings => CrossSettings.Current;
 
@@ -22,6 +24,12 @@ namespace OnSalePrep.Common.Helpers
         {
             get => AppSettings.GetValueOrDefault(_isLogin, _boolDefault);
             set => AppSettings.AddOrUpdateValue(_isLogin, value);
+        }
+
+        public static int ProductId
+        {
+            get => AppSettings.GetValueOrDefault(_productId, _intDefault);
+            set => AppSettings.AddOrUpdateValue(_productId, value);
         }
     }
 }

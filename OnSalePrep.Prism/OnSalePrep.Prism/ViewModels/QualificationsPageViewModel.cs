@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
+using OnSalePrep.Common.Helpers;
 using OnSalePrep.Common.Responses;
 using OnSalePrep.Prism.Helpers;
 using OnSalePrep.Prism.ItemViewModels;
@@ -38,33 +39,60 @@ namespace OnSalePrep.Prism.ViewModels
             set => SetProperty(ref _qualifications, value);
         }
 
-        public override void OnNavigatedTo(INavigationParameters parameters)
+        public override void OnNavigatedFrom(INavigationParameters parameters)
         {
-            base.OnNavigatedTo(parameters);
+            base.OnNavigatedFrom(parameters);
 
             if (parameters.ContainsKey("product"))
             {
-                IsRunning = true;
-                _product = parameters.GetValue<ProductResponse>("product");
-                if (_product.Qualifications != null)
-                {
-                    Qualifications = new ObservableCollection<QualificationItemViewModel>(
-                        _product.Qualifications.Select(q => new QualificationItemViewModel(_navigationService)
+                LoadProduct(parameters);
+            }
+        }
+
+        private void LoadProduct(INavigationParameters parameters)
+        {
+            IsRunning = true;
+            _product = parameters.GetValue<ProductResponse>("product");
+            if (_product.Qualifications != null)
+            {
+                Qualifications = new ObservableCollection<QualificationItemViewModel>(
+                    _product.Qualifications.Select(q => new QualificationItemViewModel(_navigationService)
                     {
                         Date = q.Date,
                         Id = q.Id,
                         Remarks = q.Remarks,
                         Score = q.Score
                     }).ToList());
-                }
+            }
 
-                IsRunning = false;
+            IsRunning = false;
+        }
+
+        public override void OnNavigatedTo(INavigationParameters parameters)
+        {
+            base.OnNavigatedTo(parameters);
+
+            if (parameters.ContainsKey("product"))
+            {
+                LoadProduct(parameters);
             }
         }
 
         private async void AddQualificationAsync()
         {
-            await _navigationService.NavigateAsync(nameof(AddQualificationPage));
+            if (Settings.IsLogin)
+            {
+                await _navigationService.NavigateAsync(nameof(AddQualificationPage));
+            }
+            else
+            {
+                NavigationParameters parameters = new NavigationParameters
+                {
+                    { "pageReturn", nameof(AddQualificationPage) }
+                };
+
+                await _navigationService.NavigateAsync($"/{nameof(OnSaleMasterDetailPage)}/NavigationPage/{nameof(LoginPage)}", parameters);
+            }
         }
     }
 }

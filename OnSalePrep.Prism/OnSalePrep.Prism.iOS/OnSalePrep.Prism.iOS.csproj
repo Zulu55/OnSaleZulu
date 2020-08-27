@@ -307,7 +307,7 @@
       <Version>2.4.11.982</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfRating">
-      <Version>18.2.0.54</Version>
+      <Version>18.2.0.55</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
