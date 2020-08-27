@@ -34,6 +34,7 @@ namespace OnSalePrep.Web.Controllers
             return View(await _context.Products
                 .Include(p => p.Category)
                 .Include(p => p.ProductImages)
+                .Include(p => p.Qualifications)
                 .ToListAsync());
         }
 
@@ -197,6 +198,8 @@ namespace OnSalePrep.Web.Controllers
             Product product = await _context.Products
                 .Include(c => c.Category)
                 .Include(c => c.ProductImages)
+                .Include(c => c.Qualifications)
+                .ThenInclude(q => q.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (product == null)
             {
