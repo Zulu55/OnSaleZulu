@@ -107,6 +107,7 @@ namespace OnSalePrep.Web.Controllers.API
         }
 
         [HttpPost]
+        [Route("Register")]
         public async Task<IActionResult> PostUser([FromBody] UserRequest request)
         {
             if (!ModelState.IsValid)
