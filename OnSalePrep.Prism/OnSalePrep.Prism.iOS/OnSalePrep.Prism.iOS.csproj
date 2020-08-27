@@ -259,6 +259,18 @@
     <ImageAsset Include="Assets.xcassets\ic_shopping_cart.imageset\ic_shopping_cart-2.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_action_add_circle.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_action_add_circle.imageset\ic_action_add_circle.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_add_circle.imageset\ic_action_add_circle-1.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_add_circle.imageset\ic_action_add_circle-2.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_card_giftcard.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_action_card_giftcard.imageset\ic_action_card_giftcard.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_card_giftcard.imageset\ic_action_card_giftcard-1.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_card_giftcard.imageset\ic_action_card_giftcard-2.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_star_half.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_action_star_half.imageset\ic_action_star_half.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_star_half.imageset\ic_action_star_half-1.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_star_half.imageset\ic_action_star_half-2.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h@2x.png" />
@@ -277,10 +289,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator">
-      <Version>18.2.0.48</Version>
+      <Version>18.2.0.55</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfRotator">
-      <Version>18.2.0.48</Version>
+      <Version>18.2.0.55</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
       <Version>2.4.11.982</Version>
@@ -289,10 +301,13 @@
     <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.5.3.2" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.2.0.1422" />
     <PackageReference Include="Syncfusion.Xamarin.Core">
-      <Version>18.2.0.54</Version>
+      <Version>18.2.0.55</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Transformations">
       <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfRating">
+      <Version>18.2.0.54</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -310,6 +325,9 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\ic_action_card_giftcard.png" />
+    <AndroidResource Include="Resources\ic_action_star_half.png" />
+    <AndroidResource Include="Resources\ic_action_add_circle.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />
@@ -340,6 +358,9 @@
     <Folder Include="Assets.xcassets\ic_more_vert.imageset\" />
     <Folder Include="Assets.xcassets\ic_person.imageset\" />
     <Folder Include="Assets.xcassets\ic_shopping_cart.imageset\" />
+    <Folder Include="Assets.xcassets\ic_action_add_circle.imageset\" />
+    <Folder Include="Assets.xcassets\ic_action_card_giftcard.imageset\" />
+    <Folder Include="Assets.xcassets\ic_action_star_half.imageset\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

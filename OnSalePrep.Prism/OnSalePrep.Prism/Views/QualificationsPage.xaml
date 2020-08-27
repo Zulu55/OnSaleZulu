@@ -3,24 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
          	 xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
            	 xmlns:i18n="clr-namespace:OnSalePrep.Prism.Helpers"
              xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
-             x:Class="OnSalePrep.Prism.Views.ProductsPage"
+             x:Class="OnSalePrep.Prism.Views.QualificationsPage"
              BackgroundColor="{StaticResource ColorBackground}"
+             IconImageSource="ic_action_star_half"
              Title="{Binding Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ic_action_add_circle" Command="{Binding AddQualificationCommand}"/>
+    </ContentPage.ToolbarItems>
 
     <AbsoluteLayout>
         <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
                      AbsoluteLayout.LayoutFlags="All" 
                      Padding="5">
-            <SearchBar Placeholder="{i18n:Translate SearchProduct}"
-                       SearchCommand="{Binding SearchCommand}"
-                       Text="{Binding Search}"/>
-            <CollectionView ItemsSource="{Binding Products}">
+            <CollectionView ItemsSource="{Binding Qualifications}">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical"/>
                 </CollectionView.ItemsLayout>
@@ -28,36 +29,20 @@
                     <DataTemplate>
                             <Grid>
                                 <Grid.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding SelectProductCommand}"/>
+                                    <TapGestureRecognizer Command="{Binding SelectQualificationCommand}"/>
                                 </Grid.GestureRecognizers>
                                 <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <ffimageloading:CachedImage Grid.Column="0"
-                                                        Aspect="AspectFill"
-                                                        Source="{Binding ImageFullPath}" 
-                                                        CacheDuration= "50"
-                                                        Margin="5"
-                                                        RetryCount= "3"
-                                                        RetryDelay= "600"
-                                                        WidthRequest="100"/>
-                            <StackLayout Grid.Column="1"
-                                         VerticalOptions="Center">
-                                <Label Text="{Binding Name}" 
-                                       FontAttributes="Bold"
-                                       FontSize="Medium"
-                                       LineBreakMode="TailTruncation" />
-                                <Label Text="{Binding Price, StringFormat='{0:C2}'}"
-                                       LineBreakMode="TailTruncation"
-                                       FontAttributes="Italic" 
-                                       VerticalOptions="End" />
-                                <rating:SfRating ItemSize="20"
-                                                 IsEnabled="False"
-                                                 Precision="Exact"
-                                                 Value="{Binding Qualification}"/>
-                            </StackLayout>
+                            <Label Grid.Column="0"
+                                   Text="{Binding DateLocal, StringFormat='{0:yyyy/MM/dd mm:hh}'}"/>
+                            <rating:SfRating Grid.Column="1"
+                                             ItemSize="20"
+                                             IsEnabled="False"
+                                             Precision="Exact"
+                                             Value="{Binding Score}"/>
                             <Image Grid.Column="2" 
                                    Source="ic_more_vert"/>
                         </Grid>
@@ -79,3 +64,4 @@
     </AbsoluteLayout>
 
 </ContentPage>
+

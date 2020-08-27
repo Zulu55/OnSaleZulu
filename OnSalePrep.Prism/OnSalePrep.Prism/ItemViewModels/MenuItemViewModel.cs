@@ -26,7 +26,19 @@ namespace OnSalePrep.Prism.ItemViewModels
                 Settings.Token = null;
             }
 
-            await _navigationService.NavigateAsync($"/{nameof(OnSaleMasterDetailPage)}/NavigationPage/{PageName}");
+            if (IsLoginRequired && !Settings.IsLogin)
+            {
+                NavigationParameters parameters = new NavigationParameters
+                {
+                    { "pageReturn", PageName }
+                };
+
+                await _navigationService.NavigateAsync($"/{nameof(OnSaleMasterDetailPage)}/NavigationPage/{nameof(LoginPage)}", parameters);
+            }
+            else
+            {
+                await _navigationService.NavigateAsync($"/{nameof(OnSaleMasterDetailPage)}/NavigationPage/{PageName}");
+            }
         }
     }
 }

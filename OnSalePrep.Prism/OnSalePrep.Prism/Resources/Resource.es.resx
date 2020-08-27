@@ -198,4 +198,34 @@
   <data name="Logout" xml:space="preserve">
     <value>Cerrar sesión</value>
   </data>
+  <data name="Qualification" xml:space="preserve">
+    <value>Calificación</value>
+  </data>
+  <data name="Qualifications" xml:space="preserve">
+    <value>Calificaciones</value>
+  </data>
+  <data name="QualificationNumber" xml:space="preserve">
+    <value>Número de calificaciones</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalles</value>
+  </data>
+  <data name="RemarksPlaceHolder" xml:space="preserve">
+    <value>Ingrese sus comentarios...</value>
+  </data>
+  <data name="QualificationError" xml:space="preserve">
+    <value>Debes seleccionar una calificación.</value>
+  </data>
+  <data name="NewQualification" xml:space="preserve">
+    <value>Nueva Calificación</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
 </root>

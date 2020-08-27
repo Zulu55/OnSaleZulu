@@ -1,5 +1,4 @@
-﻿using OnSalePrep.Common.Entities;
-using OnSalePrep.Common.Responses;
+﻿using OnSalePrep.Common.Responses;
 using OnSalePrep.Prism.Views;
 using Prism.Commands;
 using Prism.Navigation;
@@ -25,7 +24,7 @@ namespace OnSalePrep.Prism.ItemViewModels
                 { "product", this }
             };
 
-            await _navigationService.NavigateAsync(nameof(ProductDetailPage), parameters);
+            await _navigationService.NavigateAsync(nameof(ProductTabbedPage), parameters);
         }
     }
 }

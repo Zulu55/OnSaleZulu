@@ -13,7 +13,7 @@ namespace OnSalePrep.Prism.ViewModels
 
         public ProductDetailPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            Title = Languages.Product;
+            Title = Languages.Details;
         }
 
         public ObservableCollection<ProductImage> Images
@@ -35,7 +35,6 @@ namespace OnSalePrep.Prism.ViewModels
             if (parameters.ContainsKey("product"))
             {
                 Product = parameters.GetValue<ProductResponse>("product");
-                Title = Product.Name;
                 Images = new ObservableCollection<ProductImage>(Product.ProductImages);
             }
         }
