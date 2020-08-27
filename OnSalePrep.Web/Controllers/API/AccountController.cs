@@ -215,5 +215,92 @@ namespace OnSalePrep.Web.Controllers.API
 
             return Ok(new Response { IsSuccess = true});
         }
+
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [HttpPut]
+        public async Task<IActionResult> PutUser([FromBody] UserRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            string email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            User user = await _userHelper.GetUserAsync(email);
+            if (user == null)
+            {
+                return NotFound("Error001");
+            }
+
+            City city = await _context.Cities.FindAsync(request.CityId);
+            if (city == null)
+            {
+                return BadRequest(new Response
+                {
+                    IsSuccess = false,
+                    Message = "Error004"
+                });
+            }
+
+            Guid imageId = user.ImageId;
+
+            if (request.ImageArray != null)
+            {
+                imageId = await _blobHelper.UploadBlobAsync(request.ImageArray, "users");
+            }
+
+            user.FirstName = request.FirstName;
+            user.LastName = request.LastName;
+            user.Address = request.Address;
+            user.PhoneNumber = request.Phone;
+            user.Document = request.Phone;
+            user.City = city;
+            user.ImageId = imageId;
+
+            IdentityResult respose = await _userHelper.UpdateUserAsync(user);
+            if (!respose.Succeeded)
+            {
+                return BadRequest(respose.Errors.FirstOrDefault().Description);
+            }
+
+            User updatedUser = await _userHelper.GetUserAsync(email);
+            return Ok(updatedUser);
+        }
+
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [HttpPost]
+        [Route("ChangePassword")]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new Response
+                {
+                    IsSuccess = false,
+                    Message = "Bad request",
+                    Result = ModelState
+                });
+            }
+
+            string email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            User user = await _userHelper.GetUserAsync(email);
+            if (user == null)
+            {
+                return NotFound("Error001");
+            }
+
+            IdentityResult result = await _userHelper.ChangePasswordAsync(user, request.OldPassword, request.NewPassword);
+            if (!result.Succeeded)
+            {
+                var message = result.Errors.FirstOrDefault().Description;
+                return BadRequest(new Response
+                {
+                    IsSuccess = false,
+                    Message = "Error005"
+                });
+            }
+
+            return Ok(new Response { IsSuccess = true });
+        }
     }
 }
