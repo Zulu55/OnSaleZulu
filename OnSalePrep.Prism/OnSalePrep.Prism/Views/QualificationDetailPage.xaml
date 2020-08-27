@@ -17,7 +17,7 @@
                 <rating:SfRating IsEnabled="False"
                                  HorizontalOptions="Center"
                                  Precision="Exact"
-                                 Value="{Binding Qualification}"/>
+                                 Value="{Binding Qualification.Score}"/>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>

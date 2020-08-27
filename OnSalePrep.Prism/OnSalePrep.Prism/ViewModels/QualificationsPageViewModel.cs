@@ -3,6 +3,8 @@ using System.Linq;
 using OnSalePrep.Common.Responses;
 using OnSalePrep.Prism.Helpers;
 using OnSalePrep.Prism.ItemViewModels;
+using OnSalePrep.Prism.Views;
+using Prism.Commands;
 using Prism.Navigation;
 
 namespace OnSalePrep.Prism.ViewModels
@@ -13,6 +15,7 @@ namespace OnSalePrep.Prism.ViewModels
         private ProductResponse _product;
         private bool _isRunning;
         private ObservableCollection<QualificationItemViewModel> _qualifications;
+        private DelegateCommand _addQualificationCommand;
 
         public QualificationsPageViewModel(INavigationService navigationService)
             : base(navigationService)
@@ -20,6 +23,8 @@ namespace OnSalePrep.Prism.ViewModels
             _navigationService = navigationService;
             Title = Languages.Qualifications;
         }
+
+        public DelegateCommand AddQualificationCommand => _addQualificationCommand ?? (_addQualificationCommand = new DelegateCommand(AddQualificationAsync));
 
         public bool IsRunning
         {
@@ -55,6 +60,11 @@ namespace OnSalePrep.Prism.ViewModels
 
                 IsRunning = false;
             }
+        }
+
+        private async void AddQualificationAsync()
+        {
+            await _navigationService.NavigateAsync(nameof(AddQualificationPage));
         }
     }
 }
