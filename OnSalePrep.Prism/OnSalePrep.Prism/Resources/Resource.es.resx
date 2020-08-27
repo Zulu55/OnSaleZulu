@@ -228,4 +228,88 @@
   <data name="Save" xml:space="preserve">
     <value>Guardar</value>
   </data>
+  <data name="Document" xml:space="preserve">
+    <value>Documento</value>
+  </data>
+  <data name="DocumentPlaceHolder" xml:space="preserve">
+    <value>Ingresa tu documento...</value>
+  </data>
+  <data name="DocumentError" xml:space="preserve">
+    <value>Debes ingresar un documento.</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Nombres</value>
+  </data>
+  <data name="FirstNamePlaceHolder" xml:space="preserve">
+    <value>Ingresa tus nombres...</value>
+  </data>
+  <data name="FirstNameError" xml:space="preserve">
+    <value>Debes ingresar al menos un nombre.</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Apellidos</value>
+  </data>
+  <data name="LastNamePlaceHolder" xml:space="preserve">
+    <value>Ingresa tus apellidos...</value>
+  </data>
+  <data name="LastNameError" xml:space="preserve">
+    <value>Debes ingresar al menos un apellido.</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="AddressPlaceHolder" xml:space="preserve">
+    <value>Ingresa tu dirección...</value>
+  </data>
+  <data name="AddressError" xml:space="preserve">
+    <value>Debes ingresar tu dirección.</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Teléfono</value>
+  </data>
+  <data name="PhoneError" xml:space="preserve">
+    <value>Ingresa tu teléfono...</value>
+  </data>
+  <data name="PhonePlaceHolder" xml:space="preserve">
+    <value>Debes ingresar tu teléfono.</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Ciudad</value>
+  </data>
+  <data name="CityError" xml:space="preserve">
+    <value>Debes seleccionar una ciudad.</value>
+  </data>
+  <data name="CityPlaceHolder" xml:space="preserve">
+    <value>Selecciona una ciudad...</value>
+  </data>
+  <data name="Department" xml:space="preserve">
+    <value>Departamento</value>
+  </data>
+  <data name="DepartmentError" xml:space="preserve">
+    <value>Debes seleccionar un departamento.</value>
+  </data>
+  <data name="DepartmentPlaceHolder" xml:space="preserve">
+    <value>Selecciona un departamento...</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="CountryError" xml:space="preserve">
+    <value>Debes seleccionar un país.</value>
+  </data>
+  <data name="CountryPlaceHolder" xml:space="preserve">
+    <value>Selecciona un país...</value>
+  </data>
+  <data name="PasswordConfirm" xml:space="preserve">
+    <value>Confirmación de contraseña</value>
+  </data>
+  <data name="PasswordConfirmError1" xml:space="preserve">
+    <value>Debes ingresar una confirmación de contraseña.</value>
+  </data>
+  <data name="PasswordConfirmError2" xml:space="preserve">
+    <value>La contraseña y la confirmación no concuerdad.</value>
+  </data>
+  <data name="PasswordConfirmPlaceHolder" xml:space="preserve">
+    <value>Ingresa una confirmación de contraseña...</value>
+  </data>
 </root>
