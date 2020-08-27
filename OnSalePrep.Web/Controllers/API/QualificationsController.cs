@@ -61,7 +61,8 @@ namespace OnSalePrep.Web.Controllers.API
                 Date = DateTime.UtcNow,
                 Product = product,
                 Remarks = request.Remarks,
-                Score = request.Score
+                Score = request.Score,
+                User = user
             });
 
             _context.Products.Update(product);
