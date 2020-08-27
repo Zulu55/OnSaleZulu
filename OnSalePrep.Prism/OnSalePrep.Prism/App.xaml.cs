@@ -29,8 +29,10 @@ namespace OnSalePrep.Prism
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
+
             containerRegistry.Register<IApiService, ApiService>();
             containerRegistry.Register<IRegexHelper, RegexHelper>();
+            containerRegistry.Register<IFilesHelper, FilesHelper>();
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<ProductsPage, ProductsPageViewModel>();

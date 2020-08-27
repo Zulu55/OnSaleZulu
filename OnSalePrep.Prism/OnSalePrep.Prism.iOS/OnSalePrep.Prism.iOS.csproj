@@ -333,6 +333,9 @@
     <PackageReference Include="Syncfusion.Xamarin.SfRating">
       <Version>18.2.0.55</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>5.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\OnSalePrep.Common\OnSalePrep.Common.csproj">
