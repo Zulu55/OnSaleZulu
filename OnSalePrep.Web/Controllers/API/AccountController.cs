@@ -130,7 +130,6 @@ namespace OnSalePrep.Web.Controllers.API
                 });
             }
 
-            //TODO: Translate ErrorXXX literals
             City city = await _context.Cities.FindAsync(request.CityId);
             if (city == null)
             {

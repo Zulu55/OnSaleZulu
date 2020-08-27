@@ -436,5 +436,41 @@ namespace OnSalePrep.Prism.Resources {
                 return ResourceManager.GetString("PasswordConfirmPlaceHolder", resourceCulture);
             }
         }
+        
+        public static string Error001 {
+            get {
+                return ResourceManager.GetString("Error001", resourceCulture);
+            }
+        }
+        
+        public static string Error002 {
+            get {
+                return ResourceManager.GetString("Error002", resourceCulture);
+            }
+        }
+        
+        public static string Error003 {
+            get {
+                return ResourceManager.GetString("Error003", resourceCulture);
+            }
+        }
+        
+        public static string Error004 {
+            get {
+                return ResourceManager.GetString("Error004", resourceCulture);
+            }
+        }
+        
+        public static string Ok {
+            get {
+                return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        public static string RegisterMessge {
+            get {
+                return ResourceManager.GetString("RegisterMessge", resourceCulture);
+            }
+        }
     }
 }

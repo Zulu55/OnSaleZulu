@@ -312,4 +312,22 @@
   <data name="PasswordConfirmPlaceHolder" xml:space="preserve">
     <value>Enter the password confirm...</value>
   </data>
+  <data name="Error001" xml:space="preserve">
+    <value>User no found.</value>
+  </data>
+  <data name="Error002" xml:space="preserve">
+    <value>Product no found.</value>
+  </data>
+  <data name="Error003" xml:space="preserve">
+    <value>A user with that email is already registered.</value>
+  </data>
+  <data name="Error004" xml:space="preserve">
+    <value>City no found.</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="RegisterMessge" xml:space="preserve">
+    <value>Your user has been registered ok, an email was sent to confirm the user account.</value>
+  </data>
 </root>

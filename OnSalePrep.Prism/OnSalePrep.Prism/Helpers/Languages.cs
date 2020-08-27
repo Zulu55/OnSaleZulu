@@ -142,5 +142,17 @@ namespace OnSalePrep.Prism.Helpers
         public static string PasswordConfirmError2 => Resource.PasswordConfirmError2;
 
         public static string PasswordConfirmPlaceHolder => Resource.PasswordConfirmPlaceHolder;
+
+        public static string Error001 => Resource.Error001;
+
+        public static string Error002 => Resource.Error002;
+
+        public static string Error003 => Resource.Error003;
+
+        public static string Error004 => Resource.Error004;
+
+        public static string Ok => Resource.Ok;
+
+        public static string RegisterMessge => Resource.RegisterMessge;
     }
 }

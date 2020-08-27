@@ -168,6 +168,35 @@ namespace OnSalePrep.Prism.ViewModels
                 await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.ConnectionError, Languages.Accept);
                 return;
             }
+
+            string url = App.Current.Resources["UrlAPI"].ToString();
+
+            User.CityId = City.Id;
+
+            Response response = await _apiService.RegisterUserAsync(url, "/api", "/Account/Register", User);
+            IsRunning = false;
+            IsEnabled = true;
+
+            if (!response.IsSuccess)
+            {
+                if (response.Message == "Error003")
+                {
+                    await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.Error003, Languages.Accept);
+                }
+                else if (response.Message == "Error004")
+                {
+                    await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.Error004, Languages.Accept);
+                }
+                else
+                {
+                    await App.Current.MainPage.DisplayAlert(Languages.Error, response.Message, Languages.Accept);
+                }
+
+                return;
+            }
+
+            await App.Current.MainPage.DisplayAlert(Languages.Ok, Languages.RegisterMessge, Languages.Accept);
+            await _navigationService.GoBackAsync();
         }
 
         private async Task<bool> ValidateDataAsync()
