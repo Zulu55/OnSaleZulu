@@ -211,7 +211,7 @@ namespace OnSalePrep.Web.Controllers.API
             string link = Url.Action("ResetPassword", "Account", new { token = myToken }, protocol: HttpContext.Request.Scheme);
             _mailHelper.SendMail(request.Email, "Password Recover", $"<h1>Password Recover</h1>" +
                 $"Click on the following link to change your password:<p>" +
-                $"<a href = \"{link}\">Change Password}</a></p>");
+                $"<a href = \"{link}\">Change Password</a></p>");
 
             return Ok(new Response { IsSuccess = true});
         }
