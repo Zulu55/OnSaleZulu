@@ -9,6 +9,7 @@ using OnSalePrep.Common.Request;
 using OnSalePrep.Common.Responses;
 using OnSalePrep.Common.Services;
 using OnSalePrep.Prism.Helpers;
+using OnSalePrep.Prism.Views;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using Prism.Commands;
@@ -350,6 +351,7 @@ namespace OnSalePrep.Prism.ViewModels
 
         private async void ChangePasswordAsync()
         {
+            await _navigationService.NavigateAsync(nameof(ChangePasswordPage));
         }
     }
 }
