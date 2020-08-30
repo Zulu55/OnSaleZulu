@@ -396,4 +396,16 @@
   <data name="ChangePassworrdMessage" xml:space="preserve">
     <value>La contraseña se cambió con éxito.</value>
   </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Cantidad</value>
+  </data>
+  <data name="QuantityError" xml:space="preserve">
+    <value>Debes ingresar una cantidad.</value>
+  </data>
+  <data name="QuantityPlaceHolder" xml:space="preserve">
+    <value>Ingresa la cantidad del producto...</value>
+  </data>
+  <data name="AddToCartMessage" xml:space="preserve">
+    <value>El producto fue agregado al carro de compras con éxito.</value>
+  </data>
 </root>

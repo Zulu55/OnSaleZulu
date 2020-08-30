@@ -604,5 +604,29 @@ namespace OnSalePrep.Prism.Resources {
                 return ResourceManager.GetString("ChangePassworrdMessage", resourceCulture);
             }
         }
+        
+        public static string Quantity {
+            get {
+                return ResourceManager.GetString("Quantity", resourceCulture);
+            }
+        }
+        
+        public static string QuantityError {
+            get {
+                return ResourceManager.GetString("QuantityError", resourceCulture);
+            }
+        }
+        
+        public static string QuantityPlaceHolder {
+            get {
+                return ResourceManager.GetString("QuantityPlaceHolder", resourceCulture);
+            }
+        }
+        
+        public static string AddToCartMessage {
+            get {
+                return ResourceManager.GetString("AddToCartMessage", resourceCulture);
+            }
+        }
     }
 }

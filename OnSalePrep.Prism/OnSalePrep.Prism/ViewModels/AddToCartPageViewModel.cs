@@ -1,28 +1,41 @@
-﻿using OnSalePrep.Common.Entities;
+﻿using System.Collections.ObjectModel;
+using OnSalePrep.Common.Entities;
 using OnSalePrep.Common.Responses;
 using OnSalePrep.Prism.Helpers;
-using OnSalePrep.Prism.Views;
-using Prism.Commands;
 using Prism.Navigation;
-using System.Collections.ObjectModel;
 
 namespace OnSalePrep.Prism.ViewModels
 {
-    public class ProductDetailPageViewModel : ViewModelBase
+    public class AddToCartPageViewModel : ViewModelBase
     {
-        private readonly INavigationService _navigationService;
         private ProductResponse _product;
         private ObservableCollection<ProductImage> _images;
-        private DelegateCommand _addToCartCommand;
+        private bool _isRunning;
+        private bool _isEnabled;
 
-        public ProductDetailPageViewModel(INavigationService navigationService)
+        public AddToCartPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            _navigationService = navigationService;
-            Title = Languages.Details;
+            Title = Languages.AddToCart;
+            IsEnabled = true;
+            Quantity = 1;
         }
 
-        public DelegateCommand AddToCartCommand => _addToCartCommand ?? (_addToCartCommand = new DelegateCommand(AddToCartAsync));
+        public float Quantity { get; set; }
+
+        public string Remarks { get; set; }
+
+        public bool IsRunning
+        {
+            get => _isRunning;
+            set => SetProperty(ref _isRunning, value);
+        }
+
+        public bool IsEnabled
+        {
+            get => _isEnabled;
+            set => SetProperty(ref _isEnabled, value);
+        }
 
         public ObservableCollection<ProductImage> Images
         {
@@ -45,16 +58,6 @@ namespace OnSalePrep.Prism.ViewModels
                 Product = parameters.GetValue<ProductResponse>("product");
                 Images = new ObservableCollection<ProductImage>(Product.ProductImages);
             }
-        }
-
-        private async void AddToCartAsync()
-        {
-            NavigationParameters parameters = new NavigationParameters
-            {
-                { "product", _product }
-            };
-
-            await _navigationService.NavigateAsync(nameof(AddToCartPage), parameters);
         }
     }
 }

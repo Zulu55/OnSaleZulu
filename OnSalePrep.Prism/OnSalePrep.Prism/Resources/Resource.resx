@@ -402,4 +402,16 @@
   <data name="ChangePassworrdMessage" xml:space="preserve">
     <value>The password was changed successfully.</value>
   </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="QuantityError" xml:space="preserve">
+    <value>You must enter a quantity.</value>
+  </data>
+  <data name="QuantityPlaceHolder" xml:space="preserve">
+    <value>Enter the product quantity...</value>
+  </data>
+  <data name="AddToCartMessage" xml:space="preserve">
+    <value>The product was added to cart successfully.</value>
+  </data>
 </root>

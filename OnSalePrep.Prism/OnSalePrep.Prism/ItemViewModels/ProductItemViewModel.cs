@@ -1,4 +1,5 @@
-﻿using OnSalePrep.Common.Helpers;
+﻿using Newtonsoft.Json;
+using OnSalePrep.Common.Helpers;
 using OnSalePrep.Common.Responses;
 using OnSalePrep.Prism.Views;
 using Prism.Commands;
@@ -25,8 +26,9 @@ namespace OnSalePrep.Prism.ItemViewModels
                 { "product", this }
             };
 
-            Settings.ProductId = Id;
+            Settings.Product = JsonConvert.SerializeObject(this);
             await _navigationService.NavigateAsync(nameof(ProductTabbedPage), parameters);
         }
     }
 }
+ 
