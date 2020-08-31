@@ -206,5 +206,19 @@ namespace OnSalePrep.Prism.Helpers
         public static string QuantityPlaceHolder => Resource.QuantityPlaceHolder;
 
         public static string AddToCartMessage => Resource.AddToCartMessage;
+
+        public static string Value => Resource.Value;
+
+        public static string FinishOrder => Resource.FinishOrder;
+
+        public static string Yes => Resource.Yes;
+
+        public static string No => Resource.No;
+
+        public static string ClearAllConfirm => Resource.ClearAllConfirm;
+
+        public static string Total => Resource.Total;
+
+        public static string Items => Resource.Items;
     }
 }

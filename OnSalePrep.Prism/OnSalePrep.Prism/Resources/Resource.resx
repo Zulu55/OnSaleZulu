@@ -414,4 +414,25 @@
   <data name="AddToCartMessage" xml:space="preserve">
     <value>The product was added to cart successfully.</value>
   </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="FinishOrder" xml:space="preserve">
+    <value>FinishOrder</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="ClearAllConfirm" xml:space="preserve">
+    <value>Are you sure to clean all the products in the order?</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
 </root>

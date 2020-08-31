@@ -408,4 +408,25 @@
   <data name="AddToCartMessage" xml:space="preserve">
     <value>O produto foi adicionado ao carrinho de compras com sucesso.</value>
   </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="FinishOrder" xml:space="preserve">
+    <value>Concluir Pedido</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Si</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="ClearAllConfirm" xml:space="preserve">
+    <value>Tem certeza de que deseja excluir todos os produtos do pedido?</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Itens</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
 </root>
