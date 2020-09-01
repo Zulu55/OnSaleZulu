@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using OnSalePrep.Common.Entities;
 using OnSalePrep.Common.Helpers;
 using OnSalePrep.Common.Models;
-using OnSalePrep.Common.Responses;
 using OnSalePrep.Prism.Helpers;
 using OnSalePrep.Prism.ItemViewModels;
-using OnSalePrep.Prism.Views;
 using Prism.Commands;
 using Prism.Navigation;
 
@@ -149,7 +146,6 @@ namespace OnSalePrep.Prism.ViewModels
                     break;
                 }
             }
-
 
             Settings.OrderDetails = JsonConvert.SerializeObject(orderDetails);
             await _navigationService.GoBackAsync();

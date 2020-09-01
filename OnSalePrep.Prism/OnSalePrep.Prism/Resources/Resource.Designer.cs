@@ -694,5 +694,71 @@ namespace OnSalePrep.Prism.Resources {
                 return ResourceManager.GetString("ProductExistInOrder", resourceCulture);
             }
         }
+        
+        public static string FinishOrderMessage {
+            get {
+                return ResourceManager.GetString("FinishOrderMessage", resourceCulture);
+            }
+        }
+        
+        public static string PaymentMethod {
+            get {
+                return ResourceManager.GetString("PaymentMethod", resourceCulture);
+            }
+        }
+        
+        public static string PaymentMethodError {
+            get {
+                return ResourceManager.GetString("PaymentMethodError", resourceCulture);
+            }
+        }
+        
+        public static string PaymentMethodPlaceHolder {
+            get {
+                return ResourceManager.GetString("PaymentMethodPlaceHolder", resourceCulture);
+            }
+        }
+        
+        public static string Cash {
+            get {
+                return ResourceManager.GetString("Cash", resourceCulture);
+            }
+        }
+        
+        public static string PayPal {
+            get {
+                return ResourceManager.GetString("PayPal", resourceCulture);
+            }
+        }
+        
+        public static string PSE {
+            get {
+                return ResourceManager.GetString("PSE", resourceCulture);
+            }
+        }
+        
+        public static string DeliveryAddress {
+            get {
+                return ResourceManager.GetString("DeliveryAddress", resourceCulture);
+            }
+        }
+        
+        public static string DeliveryAddressError {
+            get {
+                return ResourceManager.GetString("DeliveryAddressError", resourceCulture);
+            }
+        }
+        
+        public static string DeliveryAddressPlaceHolder {
+            get {
+                return ResourceManager.GetString("DeliveryAddressPlaceHolder", resourceCulture);
+            }
+        }
+        
+        public static string LoginFirstMessage {
+            get {
+                return ResourceManager.GetString("LoginFirstMessage", resourceCulture);
+            }
+        }
     }
 }
