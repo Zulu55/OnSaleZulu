@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -86,6 +85,17 @@ namespace OnSalePrep.Prism.ViewModels
             {
                 orderDetails = new List<OrderDetail>();
             }
+
+            foreach (var orderDetail in orderDetails)
+            {
+                if (orderDetail.Product.Id == Product.Id)
+                {
+                    await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.ProductExistInOrder, Languages.Accept);
+                    await _navigationService.GoBackAsync();
+                    return;
+                }
+            }
+
 
             orderDetails.Add(new OrderDetail
             {

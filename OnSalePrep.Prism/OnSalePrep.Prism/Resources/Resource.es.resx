@@ -429,4 +429,16 @@
   <data name="Total" xml:space="preserve">
     <value>Total</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="DeleteProductInOrderConfirm" xml:space="preserve">
+    <value>¿Estas seguro de borrar el producto de la orden?</value>
+  </data>
+  <data name="ModifyOrder" xml:space="preserve">
+    <value>Modificar Pedido</value>
+  </data>
+  <data name="ProductExistInOrder" xml:space="preserve">
+    <value>El producto ya existe en la orden. Puede modificar el pedido en 'Ver carro de compras'.</value>
+  </data>
 </root>

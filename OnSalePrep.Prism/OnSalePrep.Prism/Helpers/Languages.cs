@@ -220,5 +220,13 @@ namespace OnSalePrep.Prism.Helpers
         public static string Total => Resource.Total;
 
         public static string Items => Resource.Items;
+
+        public static string Delete => Resource.Delete;
+
+        public static string DeleteProductInOrderConfirm => Resource.DeleteProductInOrderConfirm;
+
+        public static string ModifyOrder => Resource.ModifyOrder;
+
+        public static string ProductExistInOrder => Resource.ProductExistInOrder;
     }
 }

@@ -435,4 +435,16 @@
   <data name="Total" xml:space="preserve">
     <value>Total</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeleteProductInOrderConfirm" xml:space="preserve">
+    <value>Are you sure to delete the product in the order?</value>
+  </data>
+  <data name="ModifyOrder" xml:space="preserve">
+    <value>Modify Order</value>
+  </data>
+  <data name="ProductExistInOrder" xml:space="preserve">
+    <value>The product already exists on the order. You can modify the order in 'View shopping cart'.</value>
+  </data>
 </root>

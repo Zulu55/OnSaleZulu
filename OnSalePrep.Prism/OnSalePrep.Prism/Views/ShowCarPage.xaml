@@ -43,7 +43,8 @@
                                                         RetryCount= "3"
                                                         RetryDelay= "600"
                                                         WidthRequest="100"/>
-                            <Grid Grid.Column="1">
+                            <Grid Grid.Column="1"
+                                  VerticalOptions="Center">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="*" />

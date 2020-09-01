@@ -6,6 +6,7 @@ using OnSalePrep.Common.Helpers;
 using OnSalePrep.Common.Models;
 using OnSalePrep.Prism.Helpers;
 using OnSalePrep.Prism.ItemViewModels;
+using OnSalePrep.Prism.Views;
 using Prism.Commands;
 using Prism.Navigation;
 
@@ -28,7 +29,6 @@ namespace OnSalePrep.Prism.ViewModels
             _navigationService = navigationService;
             Title = Languages.ShowShoppingCar;
             IsEnabled = true;
-            LoadOrderDetails();
         }
 
         public DelegateCommand ClearAllCommand => _clearAllCommand ?? (_clearAllCommand = new DelegateCommand(ClearAllAsync));
@@ -71,6 +71,12 @@ namespace OnSalePrep.Prism.ViewModels
             set => SetProperty(ref _products, value);
         }
 
+        public override void OnNavigatedTo(INavigationParameters parameters)
+        {
+            base.OnNavigatedTo(parameters);
+            LoadOrderDetails();
+        }
+
         private void LoadOrderDetails()
         {
             List<OrderDetail> orderDetails = JsonConvert.DeserializeObject<List<OrderDetail>>(Settings.OrderDetails);
@@ -87,7 +93,7 @@ namespace OnSalePrep.Prism.ViewModels
             {
                 Category = od.Product.Category,
                 Description = od.Product.Description,
-                Id = od.Id,
+                Id = od.Product.Id,
                 IsActive = od.Product.IsActive,
                 IsStarred = od.Product.IsStarred,
                 Name = od.Product.Name,
@@ -103,8 +109,17 @@ namespace OnSalePrep.Prism.ViewModels
         {
         }
 
-        private void ClearAllAsync()
+        private async void ClearAllAsync()
         {
+            bool answer = await App.Current.MainPage.DisplayAlert(Languages.Delete, Languages.ClearAllConfirm, Languages.Yes, Languages.No);
+            if (!answer)
+            {
+                return;
+            }
+
+            List<OrderDetail> orderDetails = new List<OrderDetail>();
+            Settings.OrderDetails = JsonConvert.SerializeObject(orderDetails);
+            await _navigationService.NavigateAsync($"/{nameof(OnSaleMasterDetailPage)}/NavigationPage/{nameof(ProductsPage)}");
         }
     }
 }

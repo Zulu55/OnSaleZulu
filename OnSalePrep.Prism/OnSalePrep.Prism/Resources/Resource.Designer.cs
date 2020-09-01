@@ -670,5 +670,29 @@ namespace OnSalePrep.Prism.Resources {
                 return ResourceManager.GetString("Total", resourceCulture);
             }
         }
+        
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        public static string DeleteProductInOrderConfirm {
+            get {
+                return ResourceManager.GetString("DeleteProductInOrderConfirm", resourceCulture);
+            }
+        }
+        
+        public static string ModifyOrder {
+            get {
+                return ResourceManager.GetString("ModifyOrder", resourceCulture);
+            }
+        }
+        
+        public static string ProductExistInOrder {
+            get {
+                return ResourceManager.GetString("ProductExistInOrder", resourceCulture);
+            }
+        }
     }
 }
