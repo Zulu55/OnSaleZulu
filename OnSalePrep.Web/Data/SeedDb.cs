@@ -50,6 +50,9 @@ namespace OnSalePrep.Web.Data
                 await AddProductAsync(tecnologia, lorem, "iPhone 11", 3500000M, new string[] { "iPhone1", "iPhone2", "iPhone3", "iPhone4", "iPhone5" }, user);
                 await AddProductAsync(tecnologia, lorem, "iWatch 42", 2100000M, new string[] { "iWatch" }, user);
                 await AddProductAsync(ropa, lorem, "Tennis Adidas", 250000M, new string[] { "Adidas" }, user);
+                await AddProductAsync(mascotas, lorem, "Collie", 350000M, new string[] { "Collie1", "Collie2", "Collie3", "Collie4", "Collie5" }, user);
+                await AddProductAsync(tecnologia, lorem, "MacBook Pro 16\" 1TB", 12000000M, new string[] { "MacBookPro1", "MacBookPro2", "MacBookPro3", "MacBookPro4" }, user);
+                await AddProductAsync(ropa, lorem, "Sudadera Mujer", 95000M, new string[] { "Sudadera1", "Sudadera2", "Sudadera3", "Sudadera4", "Sudadera5" }, user);
                 await _context.SaveChangesAsync();
             }
         }
