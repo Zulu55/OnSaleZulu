@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 using OnSalePrep.Common.Services;
 using Syncfusion.Licensing;
 using OnSalePrep.Common.Helpers;
+using OnSalePrep.Prism.Helpers;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace OnSalePrep.Prism
@@ -33,6 +34,7 @@ namespace OnSalePrep.Prism
             containerRegistry.Register<IApiService, ApiService>();
             containerRegistry.Register<IRegexHelper, RegexHelper>();
             containerRegistry.Register<IFilesHelper, FilesHelper>();
+            containerRegistry.Register<ICombosHelper, CombosHelper>();
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<ProductsPage, ProductsPageViewModel>();
@@ -49,6 +51,9 @@ namespace OnSalePrep.Prism
             containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>();
             containerRegistry.RegisterForNavigation<RecoverPasswordPage, RecoverPasswordPageViewModel>();
             containerRegistry.RegisterForNavigation<ChangePasswordPage, ChangePasswordPageViewModel>();
+            containerRegistry.RegisterForNavigation<AddToCartPage, AddToCartPageViewModel>();
+            containerRegistry.RegisterForNavigation<ModifiyOrderPage, ModifiyOrderPageViewModel>();
+            containerRegistry.RegisterForNavigation<FinishOrderPage, FinishOrderPageViewModel>();
         }
     }
 }

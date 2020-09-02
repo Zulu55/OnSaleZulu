@@ -604,5 +604,161 @@ namespace OnSalePrep.Prism.Resources {
                 return ResourceManager.GetString("ChangePassworrdMessage", resourceCulture);
             }
         }
+        
+        public static string Quantity {
+            get {
+                return ResourceManager.GetString("Quantity", resourceCulture);
+            }
+        }
+        
+        public static string QuantityError {
+            get {
+                return ResourceManager.GetString("QuantityError", resourceCulture);
+            }
+        }
+        
+        public static string QuantityPlaceHolder {
+            get {
+                return ResourceManager.GetString("QuantityPlaceHolder", resourceCulture);
+            }
+        }
+        
+        public static string AddToCartMessage {
+            get {
+                return ResourceManager.GetString("AddToCartMessage", resourceCulture);
+            }
+        }
+        
+        public static string Value {
+            get {
+                return ResourceManager.GetString("Value", resourceCulture);
+            }
+        }
+        
+        public static string FinishOrder {
+            get {
+                return ResourceManager.GetString("FinishOrder", resourceCulture);
+            }
+        }
+        
+        public static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
+            }
+        }
+        
+        public static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        public static string ClearAllConfirm {
+            get {
+                return ResourceManager.GetString("ClearAllConfirm", resourceCulture);
+            }
+        }
+        
+        public static string Items {
+            get {
+                return ResourceManager.GetString("Items", resourceCulture);
+            }
+        }
+        
+        public static string Total {
+            get {
+                return ResourceManager.GetString("Total", resourceCulture);
+            }
+        }
+        
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        public static string DeleteProductInOrderConfirm {
+            get {
+                return ResourceManager.GetString("DeleteProductInOrderConfirm", resourceCulture);
+            }
+        }
+        
+        public static string ModifyOrder {
+            get {
+                return ResourceManager.GetString("ModifyOrder", resourceCulture);
+            }
+        }
+        
+        public static string ProductExistInOrder {
+            get {
+                return ResourceManager.GetString("ProductExistInOrder", resourceCulture);
+            }
+        }
+        
+        public static string FinishOrderMessage {
+            get {
+                return ResourceManager.GetString("FinishOrderMessage", resourceCulture);
+            }
+        }
+        
+        public static string PaymentMethod {
+            get {
+                return ResourceManager.GetString("PaymentMethod", resourceCulture);
+            }
+        }
+        
+        public static string PaymentMethodError {
+            get {
+                return ResourceManager.GetString("PaymentMethodError", resourceCulture);
+            }
+        }
+        
+        public static string PaymentMethodPlaceHolder {
+            get {
+                return ResourceManager.GetString("PaymentMethodPlaceHolder", resourceCulture);
+            }
+        }
+        
+        public static string Cash {
+            get {
+                return ResourceManager.GetString("Cash", resourceCulture);
+            }
+        }
+        
+        public static string PayPal {
+            get {
+                return ResourceManager.GetString("PayPal", resourceCulture);
+            }
+        }
+        
+        public static string PSE {
+            get {
+                return ResourceManager.GetString("PSE", resourceCulture);
+            }
+        }
+        
+        public static string DeliveryAddress {
+            get {
+                return ResourceManager.GetString("DeliveryAddress", resourceCulture);
+            }
+        }
+        
+        public static string DeliveryAddressError {
+            get {
+                return ResourceManager.GetString("DeliveryAddressError", resourceCulture);
+            }
+        }
+        
+        public static string DeliveryAddressPlaceHolder {
+            get {
+                return ResourceManager.GetString("DeliveryAddressPlaceHolder", resourceCulture);
+            }
+        }
+        
+        public static string LoginFirstMessage {
+            get {
+                return ResourceManager.GetString("LoginFirstMessage", resourceCulture);
+            }
+        }
     }
 }

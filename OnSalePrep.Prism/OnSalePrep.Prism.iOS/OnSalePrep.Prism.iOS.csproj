@@ -295,6 +295,10 @@
     <ImageAsset Include="Assets.xcassets\ic_action_star_half.imageset\ic_action_star_half-2.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete-1.png" />
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete-2.png" />
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete-3.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h@2x.png" />
@@ -335,6 +339,12 @@
     </PackageReference>
     <PackageReference Include="Xam.Plugin.Media">
       <Version>5.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox">
+      <Version>18.2.0.55</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.Buttons">
+      <Version>18.2.0.55</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -388,6 +398,7 @@
     <Folder Include="Assets.xcassets\ic_action_add_circle.imageset\" />
     <Folder Include="Assets.xcassets\ic_action_card_giftcard.imageset\" />
     <Folder Include="Assets.xcassets\ic_action_star_half.imageset\" />
+    <Folder Include="Assets.xcassets\ic_delete.imageset\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

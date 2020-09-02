@@ -23,6 +23,7 @@
             <!-- Styles -->
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource ColorPrimary}" />
+                <Setter Property="CornerRadius" Value="10" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="TextColor" Value="{StaticResource ColorFontInverse}" />
             </Style>

@@ -1,5 +1,6 @@
 ﻿using OnSalePrep.Common.Helpers;
 using OnSalePrep.Common.Models;
+using OnSalePrep.Prism.Helpers;
 using OnSalePrep.Prism.Views;
 using Prism.Commands;
 using Prism.Navigation;
@@ -28,6 +29,7 @@ namespace OnSalePrep.Prism.ItemViewModels
 
             if (IsLoginRequired && !Settings.IsLogin)
             {
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.LoginFirstMessage, Languages.Accept);
                 NavigationParameters parameters = new NavigationParameters
                 {
                     { "pageReturn", PageName }

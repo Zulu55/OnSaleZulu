@@ -68,9 +68,10 @@ namespace OnSalePrep.Prism.ViewModels
             }
 
             string url = App.Current.Resources["UrlAPI"].ToString();
+            ProductResponse product = JsonConvert.DeserializeObject<ProductResponse>(Settings.Product);
             QualificationRequest request = new QualificationRequest
             {
-                ProductId = Settings.ProductId,
+                ProductId = product.Id,
                 Remarks = Remarks,
                 Score = Qualification
             };
@@ -86,7 +87,7 @@ namespace OnSalePrep.Prism.ViewModels
                 return;
             }
 
-            ProductResponse product = (ProductResponse)response.Result;
+            product = (ProductResponse)response.Result;
             NavigationParameters parameters = new NavigationParameters
             {
                 { "product", product }
