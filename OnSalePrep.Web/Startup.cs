@@ -11,6 +11,7 @@ using OnSalePrep.Web.Data;
 using OnSalePrep.Web.Data.Entities;
 using OnSalePrep.Web.Helpers;
 using System.Text;
+using Vereyon.Web;
 
 namespace OnSalePrep.Web
 {
@@ -74,6 +75,7 @@ namespace OnSalePrep.Web
             services.AddScoped<ICombosHelper, CombosHelper>();
             services.AddScoped<IUserHelper, UserHelper>();
             services.AddScoped<IMailHelper, MailHelper>();
+            services.AddFlashMessage();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
