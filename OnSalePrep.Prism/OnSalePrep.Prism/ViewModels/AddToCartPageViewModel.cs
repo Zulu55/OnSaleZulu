@@ -80,10 +80,10 @@ public class AddToCartPageViewModel : ViewModelBase
             return;
         }
 
-        List<OrderDetail> orderDetails = JsonConvert.DeserializeObject<List<OrderDetail>>(Settings.OrderDetails);
+        List<OrderDetailResponse> orderDetails = JsonConvert.DeserializeObject<List<OrderDetailResponse>>(Settings.OrderDetails);
         if (orderDetails == null)
         {
-            orderDetails = new List<OrderDetail>();
+            orderDetails = new List<OrderDetailResponse>();
         }
 
         foreach (var orderDetail in orderDetails)
@@ -97,7 +97,7 @@ public class AddToCartPageViewModel : ViewModelBase
         }
 
 
-        orderDetails.Add(new OrderDetail
+        orderDetails.Add(new OrderDetailResponse
         {
             Product = Product,
             Quantity = Quantity,

@@ -1,8 +1,8 @@
 ﻿using OnSalePrep.Common.Responses;
 
-namespace OnSalePrep.Common.Models
+namespace OnSalePrep.Common.Responses
 {
-    public class OrderDetail
+    public class OrderDetailResponse
     {
         public int Id { get; set; }
 

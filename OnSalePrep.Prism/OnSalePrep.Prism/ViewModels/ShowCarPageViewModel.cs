@@ -4,6 +4,7 @@ using System.Linq;
 using Newtonsoft.Json;
 using OnSalePrep.Common.Helpers;
 using OnSalePrep.Common.Models;
+using OnSalePrep.Common.Responses;
 using OnSalePrep.Prism.Helpers;
 using OnSalePrep.Prism.ItemViewModels;
 using OnSalePrep.Prism.Views;
@@ -79,10 +80,10 @@ namespace OnSalePrep.Prism.ViewModels
 
         private void LoadOrderDetails()
         {
-            List<OrderDetail> orderDetails = JsonConvert.DeserializeObject<List<OrderDetail>>(Settings.OrderDetails);
+            List<OrderDetailResponse> orderDetails = JsonConvert.DeserializeObject<List<OrderDetailResponse>>(Settings.OrderDetails);
             if (orderDetails == null)
             {
-                orderDetails = new List<OrderDetail>();
+                orderDetails = new List<OrderDetailResponse>();
             }
 
             TotalItems = orderDetails.Count;
@@ -131,7 +132,7 @@ namespace OnSalePrep.Prism.ViewModels
                 return;
             }
 
-            List<OrderDetail> orderDetails = new List<OrderDetail>();
+            List<OrderDetailResponse> orderDetails = new List<OrderDetailResponse>();
             Settings.OrderDetails = JsonConvert.SerializeObject(orderDetails);
             await _navigationService.NavigateAsync($"/{nameof(OnSaleMasterDetailPage)}/NavigationPage/{nameof(ProductsPage)}");
         }

@@ -138,10 +138,10 @@ namespace OnSalePrep.Prism.ViewModels
 
         private void LoadCartNumber()
         {
-            List<OrderDetail> orderDetails = JsonConvert.DeserializeObject<List<OrderDetail>>(Settings.OrderDetails);
+            List<OrderDetailResponse> orderDetails = JsonConvert.DeserializeObject<List<OrderDetailResponse>>(Settings.OrderDetails);
             if (orderDetails == null)
             {
-                orderDetails = new List<OrderDetail>();
+                orderDetails = new List<OrderDetailResponse>();
                 Settings.OrderDetails = JsonConvert.SerializeObject(orderDetails);
             }
 
