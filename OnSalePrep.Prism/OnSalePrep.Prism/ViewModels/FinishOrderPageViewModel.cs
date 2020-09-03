@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,6 +8,7 @@ using OnSalePrep.Common.Models;
 using OnSalePrep.Common.Responses;
 using OnSalePrep.Common.Services;
 using OnSalePrep.Prism.Helpers;
+using OnSalePrep.Prism.Views;
 using Prism.Commands;
 using Prism.Navigation;
 using Xamarin.Essentials;
@@ -26,6 +26,8 @@ namespace OnSalePrep.Prism.ViewModels
         private float _totalQuantity;
         private string _deliveryAddress;
         private ObservableCollection<PaymentMethod> _paymentMethods;
+        private List<OrderDetailResponse> _orderDetails;
+        private TokenResponse _token;
         private PaymentMethod _paymentMethod;
         private DelegateCommand _finishOrderCommand;
 
@@ -40,6 +42,8 @@ namespace OnSalePrep.Prism.ViewModels
         }
 
         public DelegateCommand FinishOrderCommand => _finishOrderCommand ?? (_finishOrderCommand = new DelegateCommand(FinishOrderAsync));
+
+        public string Remarks { get; set; }
 
         public ObservableCollection<PaymentMethod> PaymentMethods
         {
@@ -97,17 +101,17 @@ namespace OnSalePrep.Prism.ViewModels
 
         private void LoadOrderTotals()
         {
-            TokenResponse token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
-            List<OrderDetailResponse> orderDetails = JsonConvert.DeserializeObject<List<OrderDetailResponse>>(Settings.OrderDetails);
-            if (orderDetails == null)
+            _token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
+            _orderDetails = JsonConvert.DeserializeObject<List<OrderDetailResponse>>(Settings.OrderDetails);
+            if (_orderDetails == null)
             {
-                orderDetails = new List<OrderDetailResponse>();
+                _orderDetails = new List<OrderDetailResponse>();
             }
 
-            TotalItems = orderDetails.Count;
-            TotalValue = orderDetails.Sum(od => od.Value).Value;
-            TotalQuantity = orderDetails.Sum(od => od.Quantity);
-            DeliveryAddress = $"{token.User.Address}, {token.User.City.Name}";
+            TotalItems = _orderDetails.Count;
+            TotalValue = _orderDetails.Sum(od => od.Value).Value;
+            TotalQuantity = _orderDetails.Sum(od => od.Quantity);
+            DeliveryAddress = $"{_token.User.Address}, {_token.User.City.Name}";
         }
 
         private async void FinishOrderAsync()
@@ -130,40 +134,37 @@ namespace OnSalePrep.Prism.ViewModels
             }
 
             string url = App.Current.Resources["UrlAPI"].ToString();
-            TokenRequest request = new TokenRequest
+            OrderResponse request = new OrderResponse
             {
-                Password = Password,
-                Username = Email
+                OrderDetails = _orderDetails,
+                PaymentMethod = ToPaymentMethod(PaymentMethod),
+                Remarks = Remarks
             };
 
-            Response response = await _apiService.GetTokenAsync(url, "api", "/Account/CreateToken", request);
+            Response response = await _apiService.PostAsync(url, "api", "/Orders", request, _token.Token);
             IsRunning = false;
             IsEnabled = true;
 
             if (!response.IsSuccess)
             {
-                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.LoginError, Languages.Accept);
-                Password = string.Empty;
+                await App.Current.MainPage.DisplayAlert(Languages.Error, response.Message, Languages.Accept);
                 return;
             }
 
-            TokenResponse token = (TokenResponse)response.Result;
-            Settings.Token = JsonConvert.SerializeObject(token);
-            Settings.IsLogin = true;
+            _orderDetails.Clear();
+            Settings.OrderDetails = JsonConvert.SerializeObject(_orderDetails);
+            await App.Current.MainPage.DisplayAlert(Languages.Ok, Languages.FinishOrderMessage, Languages.Accept);
+            await _navigationService.NavigateAsync($"/{nameof(OnSaleMasterDetailPage)}/NavigationPage/{nameof(ProductsPage)}");
+        }
 
-            IsRunning = false;
-            IsEnabled = true;
-
-            if (string.IsNullOrEmpty(_pageReturn))
+        private Common.Enums.PaymentMethod ToPaymentMethod(PaymentMethod paymentMethod)
+        {
+            switch (paymentMethod.Id)
             {
-                await _navigationService.NavigateAsync($"/{nameof(OnSaleMasterDetailPage)}/NavigationPage/{nameof(ProductsPage)}");
+                case 1: return Common.Enums.PaymentMethod.Cash;
+                case 2: return Common.Enums.PaymentMethod.PayPal;
+                default: return Common.Enums.PaymentMethod.PSE;
             }
-            else
-            {
-                await _navigationService.NavigateAsync($"/{nameof(OnSaleMasterDetailPage)}/NavigationPage/{_pageReturn}");
-            }
-
-            Password = string.Empty;
         }
 
         private async Task<bool> ValidateDataAsync()
