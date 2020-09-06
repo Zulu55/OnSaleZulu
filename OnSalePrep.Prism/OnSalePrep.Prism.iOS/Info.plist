@@ -23,7 +23,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>On Sale</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.appname</string>
+	<string>com.zulu.OnSalePrep</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
