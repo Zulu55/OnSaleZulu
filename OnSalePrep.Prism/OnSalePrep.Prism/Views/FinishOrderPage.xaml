@@ -66,7 +66,7 @@
 
 
                     <inputLayout:SfTextInputLayout Hint="{i18n:Translate PaymentMethod}" 
-                                                   ContainerType="Outlined">
+                                                    ContainerType="Outlined">
                         <Picker ItemDisplayBinding="{Binding Name}"
                                 ItemsSource="{Binding PaymentMethods}"
                                 SelectedItem="{Binding PaymentMethod}"
@@ -74,34 +74,34 @@
                     </inputLayout:SfTextInputLayout>
 
                     <inputLayout:SfTextInputLayout Hint="{i18n:Translate CreditCard}" 
-                                                   ContainerType="Outlined"
-                                                   IsVisible="{Binding IsCreditCard}">
-                           <maskededit:SfMaskedEdit Value="{Binding CreditCard}"
+                                                    ContainerType="Outlined"
+                                                    IsVisible="{Binding IsCreditCard}">
+                            <maskededit:SfMaskedEdit Value="{Binding CreditCard}"
                                                     Keyboard="Numeric"
                                                     Mask="0000 0000 0000 0000" />
                     </inputLayout:SfTextInputLayout>
 
                     <StackLayout Orientation="Horizontal">
                         <inputLayout:SfTextInputLayout Hint="{i18n:Translate Expiry}" 
-                                                       ContainerType="Outlined"
-                                                       IsVisible="{Binding IsCreditCard}">
-                               <maskededit:SfMaskedEdit Value="{Binding Expiry}"
+                                                        ContainerType="Outlined"
+                                                        IsVisible="{Binding IsCreditCard}">
+                                <maskededit:SfMaskedEdit Value="{Binding Expiry}"
                                                         Keyboard="Numeric"
                                                         Mask="00/00" />
                         </inputLayout:SfTextInputLayout>
 
                         <inputLayout:SfTextInputLayout Hint="{i18n:Translate CVV}" 
-                                                       ContainerType="Outlined"
-                                                       HorizontalOptions="FillAndExpand"
-                                                       IsVisible="{Binding IsCreditCard}">
-                               <maskededit:SfMaskedEdit Value="{Binding CVV}"
+                                                        ContainerType="Outlined"
+                                                        HorizontalOptions="FillAndExpand"
+                                                        IsVisible="{Binding IsCreditCard}">
+                                <maskededit:SfMaskedEdit Value="{Binding CVV}"
                                                         Keyboard="Numeric"
                                                         Mask="000" />
                         </inputLayout:SfTextInputLayout>
                     </StackLayout>
 
                     <inputLayout:SfTextInputLayout Hint="{i18n:Translate DeliveryAddress}" 
-                                                   ContainerType="Outlined">
+                                                    ContainerType="Outlined">
                         <Editor Placeholder="{i18n:Translate DeliveryAddressPlaceHolder}"
                                 HeightRequest="100"
                                 Text="{Binding DeliveryAddress}" />
