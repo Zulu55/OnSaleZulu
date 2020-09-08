@@ -465,6 +465,9 @@
   <data name="PayPal" xml:space="preserve">
     <value>PayPal</value>
   </data>
+  <data name="CreditCard" xml:space="preserve">
+    <value>Credit Card</value>
+  </data>
   <data name="PSE" xml:space="preserve">
     <value>PSE</value>
   </data>
@@ -479,5 +482,26 @@
   </data>
   <data name="LoginFirstMessage" xml:space="preserve">
     <value>You must be logged in to complete this action. You can login or register as a user below.</value>
+  </data>
+  <data name="Expiry" xml:space="preserve">
+    <value>Expiry date format yy/mm</value>
+  </data>
+  <data name="ExpiryError" xml:space="preserve">
+    <value>You must enter the expiry date for your card.</value>
+  </data>
+  <data name="CreditCardError" xml:space="preserve">
+    <value>You must enter your credit card number.</value>
+  </data>
+  <data name="CVV" xml:space="preserve">
+    <value>CVV</value>
+  </data>
+  <data name="CVVError" xml:space="preserve">
+    <value>You must enter the CVV for your card.</value>
+  </data>
+  <data name="CreditCardNoValid" xml:space="preserve">
+    <value>Credit card not valid.</value>
+  </data>
+  <data name="PayNoOk" xml:space="preserve">
+    <value>The payment process was not successful.</value>
   </data>
 </root>

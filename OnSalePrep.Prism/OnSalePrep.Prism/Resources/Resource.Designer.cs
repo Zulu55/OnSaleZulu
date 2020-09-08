@@ -731,6 +731,12 @@ namespace OnSalePrep.Prism.Resources {
             }
         }
         
+        public static string CreditCard {
+            get {
+                return ResourceManager.GetString("CreditCard", resourceCulture);
+            }
+        }
+        
         public static string PSE {
             get {
                 return ResourceManager.GetString("PSE", resourceCulture);
@@ -758,6 +764,48 @@ namespace OnSalePrep.Prism.Resources {
         public static string LoginFirstMessage {
             get {
                 return ResourceManager.GetString("LoginFirstMessage", resourceCulture);
+            }
+        }
+        
+        public static string Expiry {
+            get {
+                return ResourceManager.GetString("Expiry", resourceCulture);
+            }
+        }
+        
+        public static string ExpiryError {
+            get {
+                return ResourceManager.GetString("ExpiryError", resourceCulture);
+            }
+        }
+        
+        public static string CreditCardError {
+            get {
+                return ResourceManager.GetString("CreditCardError", resourceCulture);
+            }
+        }
+        
+        public static string CVV {
+            get {
+                return ResourceManager.GetString("CVV", resourceCulture);
+            }
+        }
+        
+        public static string CVVError {
+            get {
+                return ResourceManager.GetString("CVVError", resourceCulture);
+            }
+        }
+        
+        public static string CreditCardNoValid {
+            get {
+                return ResourceManager.GetString("CreditCardNoValid", resourceCulture);
+            }
+        }
+        
+        public static string PayNoOk {
+            get {
+                return ResourceManager.GetString("PayNoOk", resourceCulture);
             }
         }
     }

@@ -456,6 +456,9 @@
   <data name="Cash" xml:space="preserve">
     <value>Dinheiro (na entrega)</value>
   </data>
+  <data name="CreditCard" xml:space="preserve">
+    <value>Cartão de crédito</value>
+  </data>
   <data name="PayPal" xml:space="preserve">
     <value>PayPal</value>
   </data>
@@ -473,5 +476,26 @@
   </data>
   <data name="LoginFirstMessage" xml:space="preserve">
     <value>Você deve estar logado para concluir esta ação. Você pode fazer o login ou registrar-se como um usuário abaixo.</value>
+  </data>
+  <data name="Expiry" xml:space="preserve">
+    <value>Data de expiração no formato aa/mm</value>
+  </data>
+  <data name="ExpiryError" xml:space="preserve">
+    <value>Você deve inserir a data de validade do seu cartão.</value>
+  </data>
+  <data name="CreditCardError" xml:space="preserve">
+    <value>Você deve inserir o número do seu cartão de crédito.</value>
+  </data>
+  <data name="CVV" xml:space="preserve">
+    <value>CVV</value>
+  </data>
+  <data name="CVVError" xml:space="preserve">
+    <value>Você deve inserir o CVV do seu cartão.</value>
+  </data>
+  <data name="CreditCardNoValid" xml:space="preserve">
+    <value>Cartão de crédito inválido.</value>
+  </data>
+  <data name="PayNoOk" xml:space="preserve">
+    <value>O processo de pagamento não foi bem sucedido.</value>
   </data>
 </root>

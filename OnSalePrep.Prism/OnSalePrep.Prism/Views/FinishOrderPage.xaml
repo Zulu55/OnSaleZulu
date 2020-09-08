@@ -8,6 +8,7 @@
          	 xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
            	 xmlns:i18n="clr-namespace:OnSalePrep.Prism.Helpers"
              xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:maskededit="clr-namespace:Syncfusion.XForms.MaskedEdit;assembly=Syncfusion.SfMaskedEdit.XForms"
              x:Class="OnSalePrep.Prism.Views.FinishOrderPage"
              BackgroundColor="{StaticResource ColorBackground}"
              Title="{Binding Title}">
@@ -71,6 +72,33 @@
                                 SelectedItem="{Binding PaymentMethod}"
                                 Title="{i18n:Translate PaymentMethodPlaceHolder}"/>
                     </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout Hint="{i18n:Translate CreditCard}" 
+                                                   ContainerType="Outlined"
+                                                   IsVisible="{Binding IsCreditCard}">
+                           <maskededit:SfMaskedEdit Value="{Binding CreditCard}"
+                                                    Keyboard="Numeric"
+                                                    Mask="0000 0000 0000 0000" />
+                    </inputLayout:SfTextInputLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <inputLayout:SfTextInputLayout Hint="{i18n:Translate Expiry}" 
+                                                       ContainerType="Outlined"
+                                                       IsVisible="{Binding IsCreditCard}">
+                               <maskededit:SfMaskedEdit Value="{Binding Expiry}"
+                                                        Keyboard="Numeric"
+                                                        Mask="00/00" />
+                        </inputLayout:SfTextInputLayout>
+
+                        <inputLayout:SfTextInputLayout Hint="{i18n:Translate CVV}" 
+                                                       ContainerType="Outlined"
+                                                       HorizontalOptions="FillAndExpand"
+                                                       IsVisible="{Binding IsCreditCard}">
+                               <maskededit:SfMaskedEdit Value="{Binding CVV}"
+                                                        Keyboard="Numeric"
+                                                        Mask="000" />
+                        </inputLayout:SfTextInputLayout>
+                    </StackLayout>
 
                     <inputLayout:SfTextInputLayout Hint="{i18n:Translate DeliveryAddress}" 
                                                    ContainerType="Outlined">

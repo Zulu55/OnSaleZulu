@@ -3,7 +3,6 @@
     public enum PaymentMethod
     {
         Cash,
-        PayPal,
-        PSE
+        CreditCard
     }
 }

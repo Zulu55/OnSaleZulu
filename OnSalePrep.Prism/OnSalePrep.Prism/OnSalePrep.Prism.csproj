@@ -17,6 +17,9 @@
     <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
     <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox" Version="18.2.0.55" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.2.0.55" />
+    <PackageReference Include="Stripe.net" Version="39.2.0" />
+    <PackageReference Include="XamarinFastEntry.Behaviors" Version="1.1.1" />
+    <PackageReference Include="Syncfusion.Xamarin.SfMaskedEdit" Version="18.2.0.55" />
   </ItemGroup>
 
   <ItemGroup>

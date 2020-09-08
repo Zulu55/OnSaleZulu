@@ -11,8 +11,7 @@ namespace OnSalePrep.Prism.Helpers
             List<PaymentMethod> paymentMethods = new List<PaymentMethod>
             {
                 new PaymentMethod { Id = 1, Name = Languages.Cash },
-                new PaymentMethod { Id = 2, Name = Languages.PayPal },
-                new PaymentMethod { Id = 3, Name = Languages.PSE }
+                new PaymentMethod { Id = 2, Name = Languages.CreditCard }
             };
 
             return paymentMethods;
