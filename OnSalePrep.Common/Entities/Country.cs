@@ -10,6 +10,7 @@ namespace OnSalePrep.Common.Entities
 
         [MaxLength(50)]
         [Required]
+        [Display(Name = "Country")]
         public string Name { get; set; }
 
         public ICollection<Department> Departments { get; set; }
