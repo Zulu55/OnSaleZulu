@@ -1,8 +1,8 @@
 ﻿namespace OnSalePrep.Common.Enums
 {
-public enum UserType
-{
-    Admin,
-    User
-}
+    public enum UserType
+    {
+        Admin,
+        User
+    }
 }
