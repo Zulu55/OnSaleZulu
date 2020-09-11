@@ -100,5 +100,41 @@ namespace OnSalePrep.Web.Controllers.API
                 .ToListAsync();
             return Ok(orders);
         }
+
+        [HttpPut]
+        public async Task<IActionResult> PutOrders([FromBody] Order order)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            string email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            User user = await _userHelper.GetUserAsync(email);
+            if (user == null)
+            {
+                return NotFound("Error001");
+            }
+
+            Order currentOrder = await _context.Orders
+                .Include(o => o.User)
+                .ThenInclude(u => u.City)
+                .Include(o => o.OrderDetails)
+                .ThenInclude(od => od.Product)
+                .ThenInclude(od => od.Category)
+                .Include(o => o.OrderDetails)
+                .ThenInclude(od => od.Product)
+                .ThenInclude(od => od.ProductImages)
+                .FirstOrDefaultAsync(o => o.Id == order.Id && o.User.Id == user.Id);
+            if (currentOrder == null)
+            {
+                return NotFound();
+            }
+            
+            currentOrder.OrderStatus = order.OrderStatus;
+            _context.Orders.Update(currentOrder);
+            await _context.SaveChangesAsync(); 
+            return Ok(currentOrder);
+        }
     }
 }
