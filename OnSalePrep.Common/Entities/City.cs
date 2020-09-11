@@ -10,6 +10,7 @@ namespace OnSalePrep.Common.Entities
 
         [MaxLength(50)]
         [Required]
+        [Display(Name = "City")]
         public string Name { get; set; }
 
         [JsonIgnore]

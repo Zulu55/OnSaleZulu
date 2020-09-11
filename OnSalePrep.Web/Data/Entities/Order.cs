@@ -12,27 +12,28 @@ namespace OnSalePrep.Web.Data.Entities
 
         public DateTime Date { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm tt}")]
         [Display(Name = "Date")]
         public DateTime DateLocal => Date.ToLocalTime();
 
         public User User { get; set; }
 
+        [Display(Name = "Order Status")]
         public OrderStatus OrderStatus { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm tt}")]
         [Display(Name = "Date Sent")]
         public DateTime? DateSent { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm tt}")]
         [Display(Name = "Date Sent")]
         public DateTime? DateSentLocal => DateSent?.ToLocalTime();
 
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm tt}")]
         [Display(Name = "Date Confirmed")]
         public DateTime? DateConfirmed { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm tt}")]
         [Display(Name = "Date Confirmed")]
         public DateTime? DateConfirmedLocal => DateSent?.ToLocalTime();
 
@@ -44,10 +45,13 @@ namespace OnSalePrep.Web.Data.Entities
 
         public ICollection<OrderDetail> OrderDetails { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:N0}")]
         public int Lines => OrderDetails == null ? 0 : OrderDetails.Count;
 
+        [DisplayFormat(DataFormatString = "{0:N2}")]
         public float Quantity => OrderDetails == null ? 0 : OrderDetails.Sum(od => od.Quantity);
 
+        [DisplayFormat(DataFormatString = "{0:C2}")]
         public decimal Value => OrderDetails == null ? 0 : OrderDetails.Sum(od => od.Value);
     }
 }
