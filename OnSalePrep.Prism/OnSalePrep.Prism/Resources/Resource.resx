@@ -44,8 +44,8 @@
     that the ResXResourceWriter will generate, however the reader can 
     read any of the formats listed below.
     
-    mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
+    mimetype: application/x-microsoft.net.object.binary.base64
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
@@ -503,5 +503,20 @@
   </data>
   <data name="PayNoOk" xml:space="preserve">
     <value>The payment process was not successful.</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="UpdateRemarks" xml:space="preserve">
+    <value>Update Remarks</value>
+  </data>
+  <data name="CancelOrder" xml:space="preserve">
+    <value>Cancel Order</value>
+  </data>
+  <data name="OrderStatus" xml:space="preserve">
+    <value>Order Status</value>
+  </data>
+  <data name="SearchOrder" xml:space="preserve">
+    <value>Enter the value to search...</value>
   </data>
 </root>

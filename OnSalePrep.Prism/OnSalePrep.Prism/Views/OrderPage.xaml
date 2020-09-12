@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+           	 xmlns:i18n="clr-namespace:OnSalePrep.Prism.Helpers"
+             x:Class="OnSalePrep.Prism.Views.OrderPage"
+             BackgroundColor="{StaticResource ColorBackground}"
+             Title="{Binding Title}">
+
+    <StackLayout Padding="5">
+        <ScrollView>
+            <StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="EndAndExpand">
+            <Button Command="{Binding UpdateRemarksCommand}"
+                    Text="{i18n:Translate UpdateRemarks}"/>
+            <Button Command="{Binding CancelOrderCommand}"
+                    Style="{StaticResource DangerButton}"
+                    Text="{i18n:Translate CancelOrder}"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

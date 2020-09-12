@@ -132,6 +132,7 @@ namespace OnSalePrep.Web.Controllers.API
             }
             
             currentOrder.OrderStatus = order.OrderStatus;
+            currentOrder.Remarks = order.Remarks;
             _context.Orders.Update(currentOrder);
             await _context.SaveChangesAsync(); 
             return Ok(currentOrder);

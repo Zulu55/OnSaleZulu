@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using OnSalePrep.Common.Helpers;
-using OnSalePrep.Common.Models;
 using OnSalePrep.Common.Responses;
 using OnSalePrep.Common.Services;
 using OnSalePrep.Prism.Helpers;

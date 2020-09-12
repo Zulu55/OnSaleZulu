@@ -808,5 +808,35 @@ namespace OnSalePrep.Prism.Resources {
                 return ResourceManager.GetString("PayNoOk", resourceCulture);
             }
         }
+        
+        public static string Order {
+            get {
+                return ResourceManager.GetString("Order", resourceCulture);
+            }
+        }
+        
+        public static string UpdateRemarks {
+            get {
+                return ResourceManager.GetString("UpdateRemarks", resourceCulture);
+            }
+        }
+        
+        public static string CancelOrder {
+            get {
+                return ResourceManager.GetString("CancelOrder", resourceCulture);
+            }
+        }
+        
+        public static string OrderStatus {
+            get {
+                return ResourceManager.GetString("OrderStatus", resourceCulture);
+            }
+        }
+        
+        public static string SearchOrder {
+            get {
+                return ResourceManager.GetString("SearchOrder", resourceCulture);
+            }
+        }
     }
 }
