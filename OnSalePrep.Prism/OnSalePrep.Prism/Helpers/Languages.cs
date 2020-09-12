@@ -276,5 +276,17 @@ namespace OnSalePrep.Prism.Helpers
         public static string OrderStatus => Resource.OrderStatus;
 
         public static string SearchOrder => Resource.SearchOrder;
+
+        public static string DateSent => Resource.DateSent;
+
+        public static string DateConfirmed => Resource.DateConfirmed;
+
+        public static string RemarksError => Resource.RemarksError;
+
+        public static string OrderUpdatedOk => Resource.OrderUpdatedOk;
+
+        public static string CancelOrdenConfirm => Resource.CancelOrdenConfirm;
+
+        public static string Question => Resource.Question;
     }
 }

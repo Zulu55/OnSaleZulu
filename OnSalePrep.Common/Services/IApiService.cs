@@ -23,5 +23,7 @@ namespace OnSalePrep.Common.Services
         Task<Response> ChangePasswordAsync(string urlBase, string servicePrefix, string controller, ChangePasswordRequest changePasswordRequest, string token);
 
         Task<Response> PostAsync<T>(string urlBase, string servicePrefix, string controller, T model, string token);
+
+        Task<Response> PutAsync<T>(string urlBase, string servicePrefix, string controller, T model, string token);
     }
 }
