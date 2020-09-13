@@ -164,6 +164,7 @@ namespace OnSalePrep.Prism.ViewModels
                     {
                         case FacebookActionStatus.Completed:
                             FacebookProfile facebookProfile = await Task.Run(() => JsonConvert.DeserializeObject<FacebookProfile>(e.Data));
+                            await LoginFacebookAsync(facebookProfile);
                             break;
                         case FacebookActionStatus.Canceled:
                             await App.Current.MainPage.DisplayAlert("Facebook Auth", "Canceled", "Ok");
@@ -181,7 +182,7 @@ namespace OnSalePrep.Prism.ViewModels
 
                 _facebookService.OnUserData += userDataDelegate;
 
-                string[] fbRequestFields = { "email", "first_name", "picture", "gender", "last_name" };
+                string[] fbRequestFields = { "email", "first_name", "picture.width(999)", "gender", "last_name" };
                 string[] fbPermisions = { "email" };
                 await _facebookService.RequestUserDataAsync(fbRequestFields, fbPermisions);
             }
@@ -189,6 +190,35 @@ namespace OnSalePrep.Prism.ViewModels
             {
                 Debug.WriteLine(ex.ToString());
             }
+        }
+
+        private async Task LoginFacebookAsync(FacebookProfile facebookProfile)
+        {
+            IsRunning = true;
+            IsEnabled = false;
+
+            string url = App.Current.Resources["UrlAPI"].ToString();
+
+            Response response = await _apiService.GetTokenAsync(url, "api", "/Account/LoginFacebook", facebookProfile);
+
+            if (!response.IsSuccess)
+            {
+                IsRunning = false;
+                IsEnabled = true;
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.LoginError, Languages.Accept);
+                Password = string.Empty;
+                return;
+            }
+
+            TokenResponse token = (TokenResponse)response.Result;
+            Settings.Token = JsonConvert.SerializeObject(token);
+            Settings.IsLogin = true;
+
+            IsRunning = false;
+            IsEnabled = true;
+
+            await _navigationService.NavigateAsync($"/{nameof(OnSaleMasterDetailPage)}/NavigationPage/{nameof(ProductsPage)}");
+            Password = string.Empty;
         }
     }
 }

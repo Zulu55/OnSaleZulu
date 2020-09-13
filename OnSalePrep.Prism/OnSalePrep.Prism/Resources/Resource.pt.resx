@@ -534,4 +534,7 @@
   <data name="LoginFacebook" xml:space="preserve">
     <value>Entrar com o Facebook</value>
   </data>
+  <data name="ChangeOnSocialNetwork" xml:space="preserve">
+    <value>Os usuários cadastrados nas redes sociais, devem alterar a foto ou senha na rede social.</value>
+  </data>
 </root>

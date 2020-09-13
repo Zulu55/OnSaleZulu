@@ -874,10 +874,20 @@ namespace OnSalePrep.Prism.Resources {
                 return ResourceManager.GetString("Question", resourceCulture);
             }
         }
-        
-        public static string LoginFacebook {
-            get {
+
+        public static string LoginFacebook
+        {
+            get
+            {
                 return ResourceManager.GetString("LoginFacebook", resourceCulture);
+            }
+        }
+
+        public static string ChangeOnSocialNetwork
+        {
+            get
+            {
+                return ResourceManager.GetString("ChangeOnSocialNetwork", resourceCulture);
             }
         }
     }

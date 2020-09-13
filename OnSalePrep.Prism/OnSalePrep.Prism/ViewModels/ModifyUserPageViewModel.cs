@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using OnSalePrep.Common.Entities;
+using OnSalePrep.Common.Enums;
 using OnSalePrep.Common.Helpers;
 using OnSalePrep.Common.Request;
 using OnSalePrep.Common.Responses;
@@ -35,6 +36,7 @@ namespace OnSalePrep.Prism.ViewModels
         private bool _isRunning;
         private bool _isEnabled;
         private MediaFile _file;
+        private bool _isOnSaleUser;
         private DelegateCommand _changeImageCommand;
         private DelegateCommand _saveCommand;
         private DelegateCommand _changePasswordCommand;
@@ -53,6 +55,7 @@ namespace OnSalePrep.Prism.ViewModels
             TokenResponse token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
             User = token.User;
             Image = User.ImageFullPath;
+            IsOnSaleUser = User.LoginType == LoginType.OnSale;
             LoadCountriesAsync();
         }
 
@@ -64,6 +67,12 @@ namespace OnSalePrep.Prism.ViewModels
 
         public DelegateCommand ChangePasswordCommand => _changePasswordCommand ??
             (_changePasswordCommand = new DelegateCommand(ChangePasswordAsync));
+
+        public bool IsOnSaleUser
+        {
+            get => _isOnSaleUser;
+            set => SetProperty(ref _isOnSaleUser, value);
+        }
 
         public ImageSource Image
         {
@@ -174,6 +183,12 @@ namespace OnSalePrep.Prism.ViewModels
 
         private async void ChangeImageAsync()
         {
+            if (!IsOnSaleUser)
+            {
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.ChangeOnSocialNetwork, Languages.Accept);
+                return;
+            }
+
             await CrossMedia.Current.Initialize();
 
             string source = await Application.Current.MainPage.DisplayActionSheet(
@@ -351,6 +366,12 @@ namespace OnSalePrep.Prism.ViewModels
 
         private async void ChangePasswordAsync()
         {
+            if (!IsOnSaleUser)
+            {
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.ChangeOnSocialNetwork, Languages.Accept);
+                return;
+            }
+
             await _navigationService.NavigateAsync(nameof(ChangePasswordPage));
         }
     }
