@@ -1,8 +1,6 @@
 ﻿using OnSalePrep.Common.Entities;
 using OnSalePrep.Common.Enums;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OnSalePrep.Common.Responses
 {
@@ -24,9 +22,27 @@ namespace OnSalePrep.Common.Responses
 
         public Guid ImageId { get; set; }
 
-        public string ImageFullPath => ImageId == Guid.Empty
-            ? $"https://onsaleprepweb.azurewebsites.net/images/noimage.png"
-            : $"https://onsale.blob.core.windows.net/users/{ImageId}";
+        public string ImageFacebook { get; set; }
+
+        public LoginType LoginType { get; set; }
+
+        public string ImageFullPath
+        {
+            get
+            {
+                if (LoginType == LoginType.Facebook)
+                {
+                    return ImageFacebook;
+                }
+
+                if (ImageId == Guid.Empty)
+                {
+                    return $"https://onsaleprepweb.azurewebsites.net/images/noimage.png";
+                }
+
+                return $"https://onsale.blob.core.windows.net/users/{ImageId}";
+            } 
+        }
 
         public UserType UserType { get; set; }
 
