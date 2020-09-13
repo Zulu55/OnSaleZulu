@@ -30,14 +30,15 @@ namespace OnSalePrep.Common.Responses
         {
             get
             {
+                if (LoginType == LoginType.Facebook && string.IsNullOrEmpty(ImageFacebook) || 
+                    LoginType == LoginType.OnSale && ImageId == Guid.Empty)
+                {
+                    return $"https://onsaleprepweb.azurewebsites.net/images/noimage.png";
+                }
+
                 if (LoginType == LoginType.Facebook)
                 {
                     return ImageFacebook;
-                }
-
-                if (ImageId == Guid.Empty)
-                {
-                    return $"https://onsaleprepweb.azurewebsites.net/images/noimage.png";
                 }
 
                 return $"https://onsale.blob.core.windows.net/users/{ImageId}";

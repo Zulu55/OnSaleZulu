@@ -1,4 +1,4 @@
-﻿namespace OnSalePrep.Common.Entities
+﻿namespace OnSalePrep.Common.Enums
 {
     public enum LoginType
     {
