@@ -307,6 +307,10 @@
     <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete-3.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_fb.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_fb.imageset\ic_fb.png" />
+    <ImageAsset Include="Assets.xcassets\ic_fb.imageset\ic_fb-1.png" />
+    <ImageAsset Include="Assets.xcassets\ic_fb.imageset\ic_fb-2.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h@2x.png" />
@@ -316,6 +320,7 @@
     <BundleResource Include="Resources\Default@2x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <BundleResource Include="Resources\onsale.png" />
+    <BundleResource Include="Resources\ic_fb.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -359,6 +364,9 @@
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfMaskedEdit">
       <Version>18.2.0.55</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.FacebookClient">
+      <Version>2.2.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -413,6 +421,7 @@
     <Folder Include="Assets.xcassets\ic_action_card_giftcard.imageset\" />
     <Folder Include="Assets.xcassets\ic_action_star_half.imageset\" />
     <Folder Include="Assets.xcassets\ic_delete.imageset\" />
+    <Folder Include="Assets.xcassets\ic_fb.imageset\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -20,6 +20,7 @@
     <PackageReference Include="Stripe.net" Version="39.2.0" />
     <PackageReference Include="XamarinFastEntry.Behaviors" Version="1.1.1" />
     <PackageReference Include="Syncfusion.Xamarin.SfMaskedEdit" Version="18.2.0.55" />
+    <PackageReference Include="Plugin.FacebookClient" Version="2.2.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,9 +50,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ProductDetailPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\ProductsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ShowCarPage.xaml">

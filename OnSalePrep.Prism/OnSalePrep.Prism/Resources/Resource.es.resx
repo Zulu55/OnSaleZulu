@@ -531,4 +531,7 @@
   <data name="Question" xml:space="preserve">
     <value>Pregunta</value>
   </data>
+  <data name="LoginFacebook" xml:space="preserve">
+    <value>Ingresar con Facebook</value>
+  </data>
 </root>
