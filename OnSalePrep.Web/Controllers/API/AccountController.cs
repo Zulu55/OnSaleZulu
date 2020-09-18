@@ -212,7 +212,7 @@ namespace OnSalePrep.Web.Controllers.API
             user.LastName = request.LastName;
             user.Address = request.Address;
             user.PhoneNumber = request.Phone;
-            user.Document = request.Phone;
+            user.Document = request.Document;
             user.City = city;
             user.ImageId = imageId;
 
