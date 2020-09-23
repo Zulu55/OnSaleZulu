@@ -117,7 +117,9 @@ namespace OnSalePrep.Web.Controllers.API
                 UserName = request.Email,
                 ImageId = imageId,
                 UserType = UserType.User,
-                City = city
+                City = city,
+                Latitude = request.Latitude,
+                Logitude = request.Logitude
             };
 
             IdentityResult result = await _userHelper.AddUserAsync(user, request.Password);
@@ -215,6 +217,8 @@ namespace OnSalePrep.Web.Controllers.API
             user.Document = request.Document;
             user.City = city;
             user.ImageId = imageId;
+            user.Logitude = request.Logitude;
+            user.Latitude = request.Latitude;
 
             IdentityResult respose = await _userHelper.UpdateUserAsync(user);
             if (!respose.Succeeded)

@@ -63,10 +63,10 @@ namespace OnSalePrep.Web.Models
 
         public IEnumerable<SelectListItem> Cities { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:N6}")]
+        [DisplayFormat(DataFormatString = "{0:N4}")]
         public double Latitude { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:N6}")]
+        [DisplayFormat(DataFormatString = "{0:N4}")]
         public double Logitude { get; set; }
     }
 }

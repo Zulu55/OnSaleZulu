@@ -270,7 +270,9 @@ namespace OnSalePrep.Web.Controllers
                 DepartmentId = department.Id,
                 Departments = _combosHelper.GetComboDepartments(country.Id),
                 Id = user.Id,
-                Document = user.Document
+                Document = user.Document,
+                Latitude = user.Latitude,
+                Logitude = user.Logitude
             };
 
             return View(model);
