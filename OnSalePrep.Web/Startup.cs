@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using OnSalePrep.Common.Services;
 using OnSalePrep.Web.Data;
 using OnSalePrep.Web.Data.Entities;
 using OnSalePrep.Web.Helpers;
@@ -75,6 +76,7 @@ namespace OnSalePrep.Web
             services.AddScoped<ICombosHelper, CombosHelper>();
             services.AddScoped<IUserHelper, UserHelper>();
             services.AddScoped<IMailHelper, MailHelper>();
+            services.AddScoped<IApiService, ApiService>();
             services.AddFlashMessage();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

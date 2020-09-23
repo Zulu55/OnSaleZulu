@@ -62,5 +62,11 @@ namespace OnSalePrep.Web.Models
         public int CityId { get; set; }
 
         public IEnumerable<SelectListItem> Cities { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:N6}")]
+        public double Latitude { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:N6}")]
+        public double Logitude { get; set; }
     }
 }

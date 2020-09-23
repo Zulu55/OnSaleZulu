@@ -61,7 +61,7 @@ namespace OnSalePrep.Common.Models
         public Id Id { get; set; }
 
         [JsonProperty("picture")]
-        public Picture Picture { get; set; }
+        public Picture2 Picture { get; set; }
 
         [JsonProperty("nat")]
         public string Nat { get; set; }
@@ -172,7 +172,7 @@ namespace OnSalePrep.Common.Models
         public string Last { get; set; }
     }
 
-    public partial class Picture
+    public partial class Picture2
     {
         [JsonProperty("large")]
         public Uri Large { get; set; }

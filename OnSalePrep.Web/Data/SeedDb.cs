@@ -51,7 +51,7 @@ namespace OnSalePrep.Web.Data
 
         private async Task CheckBuyersAsync()
         {
-            for (int i = 1; i <= 50; i++)
+            for (int i = 1; i <= 100; i++)
             {
                 await CheckUserAsync($"100{i}", $"buyer{i}@yopmail.com", UserType.User);
             }
