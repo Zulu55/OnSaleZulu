@@ -1,6 +1,7 @@
 ﻿using OnSalePrep.Common.Models;
 using OnSalePrep.Common.Request;
 using OnSalePrep.Common.Responses;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace OnSalePrep.Common.Services
@@ -28,5 +29,9 @@ namespace OnSalePrep.Common.Services
         Task<Response> PostAsync<T>(string urlBase, string servicePrefix, string controller, T model, string token);
 
         Task<Response> PutAsync<T>(string urlBase, string servicePrefix, string controller, T model, string token);
+
+        Task<RandomUsers> GetRandomUser(string urlBase, string servicePrefix);
+
+        Task<Stream> GetPictureAsync(string urlBase, string servicePrefix);
     }
 }

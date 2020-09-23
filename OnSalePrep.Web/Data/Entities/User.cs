@@ -63,5 +63,11 @@ namespace OnSalePrep.Web.Data.Entities
 
         [Display(Name = "User")]
         public string FullNameWithDocument => $"{FirstName} {LastName} - {Document}";
+
+        [DisplayFormat(DataFormatString = "{0:N6}")]
+        public double Latitude { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:N6}")]
+        public double Logitude { get; set; }
     }
 }
