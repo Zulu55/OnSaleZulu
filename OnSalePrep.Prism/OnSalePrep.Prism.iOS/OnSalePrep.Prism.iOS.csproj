@@ -319,10 +319,18 @@
     <ImageAsset Include="Assets.xcassets\ic_fb.imageset\ic_fb-2.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_location_on.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_location_on.imageset\ic_location_on.png" />
-    <ImageAsset Include="Assets.xcassets\ic_location_on.imageset\ic_location_on-1.png" />
-    <ImageAsset Include="Assets.xcassets\ic_location_on.imageset\ic_location_on-2.png" />
+    <ImageAsset Include="Assets.xcassets\ic_location_on.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_location_on.imageset\ic_location_on.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_location_on.imageset\ic_location_on-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_location_on.imageset\ic_location_on-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h@2x.png" />
