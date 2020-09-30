@@ -55,6 +55,7 @@ namespace OnSalePrep.Prism
             containerRegistry.RegisterForNavigation<ModifiyOrderPage, ModifiyOrderPageViewModel>();
             containerRegistry.RegisterForNavigation<FinishOrderPage, FinishOrderPageViewModel>();
             containerRegistry.RegisterForNavigation<OrderPage, OrderPageViewModel>();
+            containerRegistry.RegisterForNavigation<MapPage, MapPageViewModel>();
         }
     }
 }

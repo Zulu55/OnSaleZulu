@@ -890,5 +890,13 @@ namespace OnSalePrep.Prism.Resources {
                 return ResourceManager.GetString("ChangeOnSocialNetwork", resourceCulture);
             }
         }
+
+        public static string Buyers
+        {
+            get
+            {
+                return ResourceManager.GetString("Buyers", resourceCulture);
+            }
+        }
     }
 }

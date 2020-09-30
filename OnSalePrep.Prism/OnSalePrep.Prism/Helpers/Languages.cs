@@ -292,5 +292,7 @@ namespace OnSalePrep.Prism.Helpers
         public static string LoginFacebook => Resource.LoginFacebook;
 
         public static string ChangeOnSocialNetwork => Resource.ChangeOnSocialNetwork;
+
+        public static string Buyers => Resource.Buyers;
     }
 }

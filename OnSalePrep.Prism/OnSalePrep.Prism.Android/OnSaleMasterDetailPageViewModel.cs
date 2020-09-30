@@ -17,7 +17,7 @@ namespace OnSalePrep.Prism.ViewModels
         private readonly INavigationService _navigationService;
         private UserResponse _user;
         private static OnSaleMasterDetailPageViewModel _instance;
-
+        
         public OnSaleMasterDetailPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             _instance = this;
