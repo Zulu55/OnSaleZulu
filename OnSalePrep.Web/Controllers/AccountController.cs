@@ -270,7 +270,9 @@ namespace OnSalePrep.Web.Controllers
                 DepartmentId = department.Id,
                 Departments = _combosHelper.GetComboDepartments(country.Id),
                 Id = user.Id,
-                Document = user.Document
+                Document = user.Document,
+                Latitude = user.Latitude,
+                Logitude = user.Logitude
             };
 
             return View(model);
@@ -297,6 +299,8 @@ namespace OnSalePrep.Web.Controllers
                 user.PhoneNumber = model.PhoneNumber;
                 user.ImageId = imageId;
                 user.City = await _context.Cities.FindAsync(model.CityId);
+                user.Latitude = model.Latitude;
+                user.Logitude = model.Logitude;
                 user.Document = model.Document;
 
                 await _userHelper.UpdateUserAsync(user);

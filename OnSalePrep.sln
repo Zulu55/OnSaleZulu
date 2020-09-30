@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnSalePrep.Common", "OnSalePrep.Common\OnSalePrep.Common.csproj", "{15425108-BDCB-460D-9D06-F61D536394B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnSalePrep.Prism", "OnSalePrep.Prism\OnSalePrep.Prism\OnSalePrep.Prism.csproj", "{E0F1DC70-CA00-485D-9BF7-57DA72339B4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnSalePrep.Prism", "OnSalePrep.Prism\OnSalePrep.Prism\OnSalePrep.Prism.csproj", "{E0F1DC70-CA00-485D-9BF7-57DA72339B4D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnSalePrep.Prism.Android", "OnSalePrep.Prism\OnSalePrep.Prism.Android\OnSalePrep.Prism.Android.csproj", "{E150C103-D9F3-44AB-BCB2-016F63E9B1EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnSalePrep.Prism.iOS", "OnSalePrep.Prism\OnSalePrep.Prism.iOS\OnSalePrep.Prism.iOS.csproj", "{BBE9E291-BAAB-4037-929D-A451CE5ED099}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnSalePrep.Web", "OnSalePrep.Web\OnSalePrep.Web.csproj", "{FA694916-0BCE-4762-8552-9F4059A8BE82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnSalePrep.Web", "OnSalePrep.Web\OnSalePrep.Web.csproj", "{FA694916-0BCE-4762-8552-9F4059A8BE82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
