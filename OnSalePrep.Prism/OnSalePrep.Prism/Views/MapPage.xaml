@@ -12,7 +12,8 @@
   
     <StackLayout>
         <maps:Map x:Name="MyMap"
-                  MapType="Street"/>
+                  MapType="Street">
+        </maps:Map>
     </StackLayout>
 
 </ContentPage>

@@ -4,22 +4,57 @@ using System.Threading.Tasks;
 using OnSalePrep.Common.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
+using Xamarin.Essentials;
+using OnSalePrep.Common.Responses;
+using System.Collections.Generic;
 
 namespace OnSalePrep.Prism.Views
 {
     public partial class MapPage : ContentPage
     {
         private readonly IGeolocatorService _geolocatorService;
+        private readonly IApiService _apiService;
 
-        public MapPage(IGeolocatorService geolocatorService)
+        public MapPage(IGeolocatorService geolocatorService, IApiService apiService)
         {
             InitializeComponent();
             _geolocatorService = geolocatorService;
+            _apiService = apiService;
         }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
             MoveMapToCurrentPositionAsync();
+            LoadUsersAsync();
+        }
+
+        private async void LoadUsersAsync()
+        {
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                return;
+            }
+
+            string url = App.Current.Resources["UrlAPI"].ToString();
+            Response response = await _apiService.GetListAsync<UserResponse>(url, "api", "/Account");
+
+            if (!response.IsSuccess)
+            {
+                return;
+            }
+
+            List<UserResponse> users = (List<UserResponse>)response.Result;
+            foreach (UserResponse user in users)
+            {
+                MyMap.Pins.Add(new Pin
+                {
+                    Address = user.Address,
+                    Label = user.FullName,
+                    Position = new Position(user.Latitude, user.Logitude),
+                    Type = PinType.Place
+                });
+            }
         }
 
         private async void MoveMapToCurrentPositionAsync()
@@ -45,12 +80,12 @@ namespace OnSalePrep.Prism.Views
 
         private async Task<bool> CheckLocationPermisionsAsync()
         {
-            PermissionStatus permissionLocation = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
-            PermissionStatus permissionLocationAlways = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.LocationAlways);
-            PermissionStatus permissionLocationWhenInUse = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.LocationWhenInUse);
-            bool isLocationEnabled = permissionLocation == PermissionStatus.Granted ||
-                                        permissionLocationAlways == PermissionStatus.Granted ||
-                                        permissionLocationWhenInUse == PermissionStatus.Granted;
+            Plugin.Permissions.Abstractions.PermissionStatus permissionLocation = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
+            Plugin.Permissions.Abstractions.PermissionStatus permissionLocationAlways = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.LocationAlways);
+            Plugin.Permissions.Abstractions.PermissionStatus permissionLocationWhenInUse = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.LocationWhenInUse);
+            bool isLocationEnabled = permissionLocation == Plugin.Permissions.Abstractions.PermissionStatus.Granted ||
+                                        permissionLocationAlways == Plugin.Permissions.Abstractions.PermissionStatus.Granted ||
+                                        permissionLocationWhenInUse == Plugin.Permissions.Abstractions.PermissionStatus.Granted;
             if (isLocationEnabled)
             {
                 return true;
@@ -61,9 +96,9 @@ namespace OnSalePrep.Prism.Views
             permissionLocation = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
             permissionLocationAlways = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.LocationAlways);
             permissionLocationWhenInUse = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.LocationWhenInUse);
-            return permissionLocation == PermissionStatus.Granted ||
-                    permissionLocationAlways == PermissionStatus.Granted ||
-                    permissionLocationWhenInUse == PermissionStatus.Granted;
+            return permissionLocation == Plugin.Permissions.Abstractions.PermissionStatus.Granted ||
+                    permissionLocationAlways == Plugin.Permissions.Abstractions.PermissionStatus.Granted ||
+                    permissionLocationWhenInUse == Plugin.Permissions.Abstractions.PermissionStatus.Granted;
         }
     }
 }
