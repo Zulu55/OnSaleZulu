@@ -22,6 +22,8 @@
     <PackageReference Include="Syncfusion.Xamarin.SfMaskedEdit" Version="18.2.0.55" />
     <PackageReference Include="Plugin.FacebookClient" Version="2.2.1" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="4.8.0.1451" />
+    <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
+    <PackageReference Include="Plugin.Permissions" Version="6.0.1" />
   </ItemGroup>
 
   <ItemGroup>

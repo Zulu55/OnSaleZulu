@@ -5,9 +5,15 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"    
              x:Class="OnSalePrep.Prism.Views.MapPage"
              BackgroundColor="{StaticResource ColorBackground}"
              Title="{Binding Title}">
   
+    <StackLayout>
+        <maps:Map x:Name="MyMap"
+                  MapType="Street"/>
+    </StackLayout>
+
 </ContentPage>
 

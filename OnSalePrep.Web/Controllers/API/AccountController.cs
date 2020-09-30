@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using OnSalePrep.Common.Entities;
@@ -14,6 +15,7 @@ using OnSalePrep.Web.Data.Entities;
 using OnSalePrep.Web.Helpers;
 using OnSalePrep.Web.Models;
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -63,6 +65,15 @@ namespace OnSalePrep.Web.Controllers.API
             }
 
             return Ok(user);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetUsers()
+        {
+            List<User> users = await _context.Users
+                .Include(u => u.City)
+                .ToListAsync();
+            return Ok(users);
         }
 
         [HttpPost]

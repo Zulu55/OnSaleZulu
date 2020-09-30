@@ -115,6 +115,9 @@
     <PackageReference Include="Xamarin.Forms.Maps">
       <Version>4.8.0.1451</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugin.Geolocator">
+      <Version>4.5.0.6</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementations\Localize.cs" />
